@@ -58,7 +58,11 @@ What the patches carry today:
   `MutationInfo.Operation` (REMOVE) and `events.AppStateMutation`, emitted for
   every mutation with its collection and version, also during a full sync
   (except the contacts a full sync stores in bulk); the `<biz>` node of a
-  native flow message (buttons, Pix, orders), as WhatsApp Web sends it.
+  native flow message (buttons, Pix, orders), as WhatsApp Web sends it;
+  `sendAppState` under `appStateSyncLock`, as `fetchAppState` already was
+  (0008: two sends, or a send and a notification's fetch, applied a 409's
+  conflicting patches on a stale version and broke the collection's LTHash;
+  the bridge also serializes its own calls, `app_state_recovery.serialize`).
 - **meowcaller**: go.mod/go.sum on neonize's whatsmeow pin; accept 2 s after
   Answer when no `mute_v2` arrives; resynchronize the SRTP receive ROC.
   meowcaller is pinned at 27a3c6b1, its last commit on `go.mau.fi/whatsmeow`:
