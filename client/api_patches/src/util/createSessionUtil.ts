@@ -847,11 +847,12 @@ export default class CreateSessionUtil {
     }
   }
 
-  startChatWootClient(client: any) {
+  startChatWootClient(client: any, allowedUrls: string[] = []) {
     if (client.config.chatWoot && !client._chatWootClient)
       client._chatWootClient = new chatWootClient(
         client.config.chatWoot,
-        client.session
+        client.session,
+        allowedUrls
       );
     return client._chatWootClient;
   }
@@ -913,7 +914,10 @@ export default class CreateSessionUtil {
         );
       }
 
-      this.startChatWootClient(client);
+      this.startChatWootClient(
+        client,
+        req.serverOptions.chatwoot?.allowedUrls || []
+      );
 
       if (req.serverOptions.customUserDataDir) {
         req.serverOptions.createOptions.puppeteerOptions = Object.assign(

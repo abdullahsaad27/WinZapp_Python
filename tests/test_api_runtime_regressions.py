@@ -196,3 +196,19 @@ def test_disconnected_mobile_before_the_runtime_is_attached_is_ignored():
     assert "typeof client.close !== 'function'" in source
     assert "Ignoring disconnectedMobile before the session is ready" in source
     assert "if (typeof client.close === 'function') client.close();" in source
+
+
+def test_server_2_10_70_admin_hardening_is_ported_into_the_restored_files():
+    """These five files are restored over the checkout, so upstream's 2.10.70
+    changes only reach WinZapp when they are carried into api_patches/."""
+    controller = _patch("src/controller/sessionController.ts")
+    assert "hasAdminSecret(req, req.serverOptions.secretKey)" in controller
+    assert "Invalid session path" in controller
+
+    routes = _patch("src/routes/index.ts")
+    assert "routes.post('/api/show-all-sessions', SessionController.showAllSessions)" in routes
+    assert "routes.post('/api/backup-sessions', MiscController.backupAllSessions)" in routes
+
+    assert "allowedUrls: []" in _patch("src/config.ts")
+    assert "req.serverOptions.chatwoot?.allowedUrls" in _patch("src/util/createSessionUtil.ts")
+    assert "function splitDelimited(" in _patch("src/util/functions.ts")
