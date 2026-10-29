@@ -1870,8 +1870,12 @@ def setup_logging():
         root.setLevel(logging.INFO)
 
         # Silence very noisy third-party libraries
+        # aiosqlite echoes every statement, parameters and encrypted payloads
+        # included, at DEBUG: two lines per database call, 9,465 of them before
+        # the window showed and an 850 MB log.log. WinZapp's own DEBUG lines
+        # (LIDs and all) are untouched.
         for _lib in ("urllib3", "requests", "socketio", "engineio",
-                     "charset_normalizer", "websocket", "PIL", "comtypes"):
+                     "charset_normalizer", "websocket", "PIL", "comtypes", "aiosqlite"):
             logging.getLogger(_lib).setLevel(logging.ERROR)
 
         logging.warning("WinZapp client starting up...")

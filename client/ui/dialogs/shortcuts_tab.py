@@ -199,8 +199,21 @@ class ShortcutsTabMixin:
         self._refresh_shortcut_rows()
 
     def _shortcut_hotkey_changed(self, event):
-        self._refresh_shortcut_rows()
+        # Coalesced and after the event: loading the dialog's values sets this
+        # field, which rebuilt the whole tree a moment after it was built,
+        # while the Settings window was still being put together.
         event.Skip()
+        if getattr(self, '_shortcut_refresh_pending', False):
+            return
+        self._shortcut_refresh_pending = True
+        wx.CallAfter(self._deferred_shortcut_refresh)
+
+    def _deferred_shortcut_refresh(self):
+        self._shortcut_refresh_pending = False
+        try:
+            self._refresh_shortcut_rows()
+        except RuntimeError:     # the dialog was closed in the meantime
+            pass
 
     def _shortcut_binding(self, shortcut):
         if shortcut.id == GLOBAL.id:
