@@ -113,7 +113,9 @@ def install(client, timer_of):
     """Wrap `client.send_message` so a message to a chat with a timer carries
     it. `timer_of(jid_text)` answers (seconds, setting_ts) or None; a failure
     there sends the message as it was."""
-    original = client.send_message
+    original = getattr(client, "send_message", None)
+    if original is None:        # a client that sends nothing (a test's stand-in)
+        return None
 
     def send_message(to, message, *args, **kwargs):
         try:

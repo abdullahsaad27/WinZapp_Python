@@ -158,3 +158,11 @@ def test_an_unknown_chat_has_no_timer(tmp_path):
         assert _Session(db, []).chat_timer("9@lid") is None
     finally:
         db.close()
+
+
+def test_a_client_without_send_message_is_left_alone():
+    """REGRESSION: the session's start installs the wrapper on any client;
+    the stand-in clients of other tests have no send_message."""
+    client = SimpleNamespace()
+    assert ct.install(client, lambda jid: None) is None
+    assert not hasattr(client, "send_message")
