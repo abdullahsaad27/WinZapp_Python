@@ -86,6 +86,28 @@ def test_status_reaction_bootloader_fallback_is_mirrored_in_both_lookups():
             assert marker in section, f"{marker!r} missing from {name}"
 
 
+def test_the_known_status_bundles_are_fetched_before_the_tier_matches():
+    """REGRESSION (live 2026-10-29): the tiers were tried first and the known
+    bundles only when no tier matched. The "reaction" tier then matched an
+    unrelated component (WAWebWrapperMessageDropdownMenuReactionsTray.react),
+    so the status drawer bundle, which carries WAWebSendStatusReactionAction,
+    was never fetched: liking a status failed, and startup said it might not
+    work on this connection."""
+    source = DEVICE.read_text(encoding="utf-8")
+    react = source[
+        source.index("export async function reactMessage") :
+        source.index("export async function getSendCapabilities")
+    ]
+    probe = source[source.index("export async function getSendCapabilities") :]
+    for section, name in ((react, "reactMessage"), (probe, "getSendCapabilities")):
+        known = section.index("let candidates: string[] = bootloaderPlan.knownCandidates")
+        tiers = section.index("for (const pattern of tiers)")
+        assert known < tiers, f"{name} tries the tiers before the known bundles"
+        assert "candidates = candidates.concat(matched);" in section, name
+    plan = source[source.index("const STATUS_REACTION_BOOTLOADER"):]
+    assert plan.index("'WAWebStatusDrawerFlow.react'") < plan.index("maxCandidates")
+
+
 def test_the_status_reaction_candidate_list_exists_exactly_once():
     """REGRESSION: the list the next WhatsApp rename will need updated was
     copied literally into both page.evaluate calls, guarded only by a test that
