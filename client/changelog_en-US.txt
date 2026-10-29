@@ -4,6 +4,8 @@ This release brings communities and a reorganized settings window, on top of eve
 
 WHAT'S NEW
 
+- Quick chats: Ctrl+Alt+Shift+F1–F10 assigns a chat, and Ctrl+Shift+the same function key opens it from anywhere in the window (F10 is slot 0). Assignments are per account, shortcuts can be changed in Settings, and existing bookmark shortcuts remain available.
+
 - WPPConnect Server updated to 2.10.70, which tightens its admin routes (listing and backing up sessions now need the secret key in a header instead of the address), the session folders it deletes on logout and the way contact lists are split. The existing session cleanup on shutdown with a custom API was adjusted to match.
 
 - A group call that rang and was not answered is now recorded in its group, and its ring names the group: it no longer appears as a private call from whoever started it.

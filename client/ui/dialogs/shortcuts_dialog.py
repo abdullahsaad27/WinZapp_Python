@@ -134,7 +134,6 @@ class ShortcutsDialog(wx.Dialog):
             i18n.t("shortcut_alt3_label"),
             i18n.t("shortcut_alt_t_label"),
             i18n.t("shortcut_ctrl_num_label"),
-            i18n.t("shortcut_ctrl_shift_num_label"),
             i18n.t("shortcut_alt_shift_num_label"),
             i18n.t("shortcut_ctrl_alt_shift_num_label"),
             i18n.t("shortcut_ctrl_r_label"),

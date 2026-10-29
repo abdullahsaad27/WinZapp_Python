@@ -4,6 +4,8 @@ Bu sürüm, 2.1.0.0 sürümündeki her şeye ek olarak toplulukları ve yeniden 
 
 YENİLİKLER
 
+- Hızlı sohbetler: Ctrl+Alt+Shift+F1–F10 bir sohbet atar, Ctrl+Shift+aynı işlev tuşu ise pencerenin herhangi bir yerinden açar (F10, 0 numaralı konumdur). Atamalar her hesap için ayrıdır, kısayollar Ayarlar'dan değiştirilebilir ve yer işareti kısayolları korunur.
+
 - WPPConnect Server 2.10.70 sürümüne güncellendi; yönetim rotaları (oturumları listelemek ve yedeklemek artık gizli anahtarı adreste değil bir başlıkta istiyor), oturumdan çıkarken sildiği oturum klasörleri ve kişi listelerinin ayrıştırılma biçimi sıkılaştırıldı. Özel API ile kapanırken yapılan oturum temizliği bu değişikliğe uyarlandı.
 
 - Çalan ve yanıtlanmayan bir grup araması artık kendi grubuna kaydediliyor ve arama bildirimi grubu gösteriyor: aramayı başlatan kişiden gelen özel bir arama gibi görünmüyor.

@@ -1050,6 +1050,7 @@ def get_downloads_folder() -> str:
 # is added to only one of them.
 DEFAULT_SETTINGS = {
     "keyboard_shortcuts": {},
+    "quick_chats": {},
     "connection": {
         "wpp_server": "http://127.0.0.1",
         "wpp_port": 6300,

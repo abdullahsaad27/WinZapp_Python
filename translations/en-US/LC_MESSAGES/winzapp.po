@@ -9165,6 +9165,59 @@ msgctxt "quick_audio_output_title"
 msgid "Playback device"
 msgstr "Playback device"
 
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/conversation_panel/chat_menu.py
+#, python-brace-format
+msgctxt "quick_chat_assign_menu"
+msgid "Assign this chat to number {digit}"
+msgstr "Assign this chat to number {digit}"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+msgctxt "quick_chat_assign_shortcut"
+msgid "Assign the focused chat to a quick number"
+msgstr "Assign the focused chat to a quick number"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_assigned"
+msgid "Quick chat {digit} assigned to {name}."
+msgstr "Quick chat {digit} assigned to {name}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_empty"
+msgid "No chat is assigned to quick number {digit}."
+msgstr "No chat is assigned to quick number {digit}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+msgctxt "quick_chat_no_focus"
+msgid ""
+"Focus a chat in a chat list or open a chat before assigning a quick number."
+msgstr ""
+"Focus a chat in a chat list or open a chat before assigning a quick number."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+msgctxt "quick_chat_open_shortcut"
+msgid "Open an assigned quick chat"
+msgstr "Open an assigned quick chat"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+msgctxt "quick_chat_protected"
+msgid "Protected chats cannot be assigned to quick numbers."
+msgstr "Protected chats cannot be assigned to quick numbers."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_unavailable"
+msgid "Quick chat {digit} is unavailable."
+msgstr "Quick chat {digit} is unavailable."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/conversation_panel/chat_menu.py
+msgctxt "quick_chats_menu"
+msgid "Quick chats"
+msgstr "Quick chats"
+
 #: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/settings.py
 msgctxt "quick_tip_message"
 msgid "To see keyboard shortcuts at any time, press f1."
@@ -10750,7 +10803,6 @@ msgstr ""
 "contact of the chat"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
-#: client/ui/dialogs/shortcuts_dialog.py
 msgctxt "shortcut_ctrl_shift_num_label"
 msgid "Ctrl+Shift+0 to Ctrl+Shift+9: remove a bookmark"
 msgstr "Ctrl+Shift+0 to Ctrl+Shift+9: remove a bookmark"

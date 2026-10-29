@@ -8535,7 +8535,9 @@ msgctxt "pairing_engine_restart_failed"
 msgid ""
 "WinZapp could not restart by itself, so the connection engine was not "
 "changed."
-msgstr "O WinZapp não conseguiu se reiniciar sozinho, então o motor de conexão não foi alterado."
+msgstr ""
+"O WinZapp não conseguiu se reiniciar sozinho, então o motor de conexão não "
+"foi alterado."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/connect.py
 #, python-brace-format
@@ -9259,6 +9261,60 @@ msgstr "Dispositivo de reprodução: {device}"
 msgctxt "quick_audio_output_title"
 msgid "Playback device"
 msgstr "Dispositivo de reprodução"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/conversation_panel/chat_menu.py
+#, python-brace-format
+msgctxt "quick_chat_assign_menu"
+msgid "Assign this chat to number {digit}"
+msgstr "Atribuir este chat ao número {digit}"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+msgctxt "quick_chat_assign_shortcut"
+msgid "Assign the focused chat to a quick number"
+msgstr "Atribuir o chat em foco a um número de acesso rápido"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_assigned"
+msgid "Quick chat {digit} assigned to {name}."
+msgstr "Chat de acesso rápido {digit} atribuído a {name}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_empty"
+msgid "No chat is assigned to quick number {digit}."
+msgstr "Nenhum chat está atribuído ao número de acesso rápido {digit}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+msgctxt "quick_chat_no_focus"
+msgid ""
+"Focus a chat in a chat list or open a chat before assigning a quick number."
+msgstr ""
+"Coloque o foco em um chat na lista ou abra um chat antes de atribuir um "
+"número de acesso rápido."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+msgctxt "quick_chat_open_shortcut"
+msgid "Open an assigned quick chat"
+msgstr "Abrir um chat de acesso rápido atribuído"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+msgctxt "quick_chat_protected"
+msgid "Protected chats cannot be assigned to quick numbers."
+msgstr "Chats protegidos não podem ser atribuídos a números de acesso rápido."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_unavailable"
+msgid "Quick chat {digit} is unavailable."
+msgstr "O chat de acesso rápido {digit} não está disponível."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/conversation_panel/chat_menu.py
+msgctxt "quick_chats_menu"
+msgid "Quick chats"
+msgstr "Chats de acesso rápido"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/settings.py
 msgctxt "quick_tip_message"
@@ -10853,7 +10909,6 @@ msgstr ""
 "da conversa"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
-#: client/ui/dialogs/shortcuts_dialog.py
 msgctxt "shortcut_ctrl_shift_num_label"
 msgid "Ctrl+Shift+0 to Ctrl+Shift+9: remove a bookmark"
 msgstr "Ctrl+Shift+0 a Ctrl+Shift+9: remover marcador"
