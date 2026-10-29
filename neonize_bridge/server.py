@@ -957,8 +957,8 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, read_receipts.Read
                         who = msgmap.jid_wpp(jid_text(e.MessageSource.Sender))
                         stage = {"DELIVERED": "delivered", "READ": "read",
                                  "PLAYED": "played"}[kind]
-                        for mid in e.MessageIDs:
-                            self.db.receipt(mid, who, stage, msgmap.seconds(e.Timestamp))
+                        self.db.receipts(list(e.MessageIDs), who, stage,
+                                         msgmap.seconds(e.Timestamp))
                     except Exception:
                         log.exception("store receipt")
                 if chat.endswith("@g.us"):
@@ -1845,12 +1845,19 @@ def create_app(folder, fixed=""):
     async def list_chats(req):
         s = session(req)
         threading.Thread(target=s.fetch_changes, daemon=True).start()
-        chat_rows = s.db.chats()
-        # the number behind an LID comes from neonize's store: off the event loop
-        names, nicknames = await in_thread(
-            chat_listing.listing_identities, chat_rows, s.db.contacts(), s._phone_of_lid)
-        return web.json_response([
-            chat_listing.chat_to_wpp(c, names, wpp_id, nicknames=nicknames) for c in chat_rows])
+
+        def listing():
+            # All of it off the event loop: the store's reads wait on its lock
+            # (held by history blocks and receipts), and the number behind an
+            # LID comes from neonize's store. Read on the loop, they stood it
+            # still for seconds on every resync, and sends waited behind it.
+            chat_rows = s.db.chats()
+            names, nicknames = chat_listing.listing_identities(
+                chat_rows, s.db.contacts(), s._phone_of_lid)
+            return [chat_listing.chat_to_wpp(c, names, wpp_id, nicknames=nicknames)
+                    for c in chat_rows]
+
+        return web.json_response(await in_thread(listing))
 
     async def all_contacts(req):
         s = session(req)
@@ -2330,8 +2337,11 @@ def create_app(folder, fixed=""):
             g = await asyncio.get_running_loop().run_in_executor(
                 None, s.client.get_group_info, jid)
         except Exception as error:
-            log.info("group-info failed: %s", type(error).__name__)
-            return web.json_response({"status": "error", "message": str(error)}, status=404)
+            refusal = groups.info_refusal(error)
+            log.info("group-info failed: %s%s", type(error).__name__,
+                     f" ({refusal})" if refusal else "")
+            return web.json_response({"status": "error", "message": str(error),
+                                      "code": refusal or None}, status=404)
         info = group_to_wpp(g)
         community = communities.community_counted(g)
         if community:
