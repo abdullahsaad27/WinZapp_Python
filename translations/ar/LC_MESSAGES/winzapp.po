@@ -2631,7 +2631,7 @@ msgstr "إعدادات فيديو المكالمة"
 #: client/ui/dialogs/status_audience_dialog.py client/updater.py
 msgctxt "cancel"
 msgid "&Cancel"
-msgstr "إلغاء"
+msgstr "إ&لغاء"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/conversations.py
 msgctxt "cancel_edit"
@@ -3376,7 +3376,7 @@ msgstr "مسح الدردشات المحددة"
 #: client/ui/dialogs/transcription_result.py client/ui/media_viewer.py
 msgctxt "close"
 msgid "&Close"
-msgstr "إغلاق"
+msgstr "إ&غلاق"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/chat_menu.py
@@ -3393,17 +3393,17 @@ msgstr "أدوات الأعمال"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_add"
 msgid "&Add to cart..."
-msgstr "إضافة إلى سلة التسوق…"
+msgstr "إ&ضافة إلى سلة التسوق…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_change"
 msgid "Change &quantity..."
-msgstr "تغيير الكمية…"
+msgstr "تغيير ال&كمية…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_clear"
 msgid "&Empty cart"
-msgstr "تفريغ السلة"
+msgstr "ت&فريغ السلة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_clear_confirm"
@@ -3425,22 +3425,22 @@ msgstr "السلة فارغة."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_list"
 msgid "Car&t"
-msgstr "السلة"
+msgstr "ال&سلة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_note"
 msgid "&Message to the business (optional)"
-msgstr "رسالة للعمل (اختياري)"
+msgstr "&رسالة للعمل (اختياري)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_remove"
 msgid "&Remove from cart"
-msgstr "إزالة من السلة"
+msgstr "إ&زالة من السلة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_send"
 msgid "&Send order"
-msgstr "إرسال الطلب"
+msgstr "إرسال ال&طلب"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/cart_dialog.py
 #, python-brace-format
@@ -3517,12 +3517,12 @@ msgstr "المجموع المقدر {amount}"
 #: client/ui/dialogs/order_create_dialog.py
 msgctxt "commerce_item_add"
 msgid "&Add item"
-msgstr "إضافة عنصر"
+msgstr "إ&ضافة عنصر"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_item_name"
 msgid "&Name"
-msgstr "الاسم"
+msgstr "الا&سم"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_item_name_required"
@@ -3532,7 +3532,7 @@ msgstr "اكتب اسم العنصر."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_item_price"
 msgid "Unit &price"
-msgstr "سعر الوحدة"
+msgstr "سعر ال&وحدة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_item_price_invalid"
@@ -3542,7 +3542,7 @@ msgstr "اكتب سعرًا أكبر من صفر، مثل 12.50."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_item_quantity"
 msgid "&Quantity"
-msgstr "الكمية"
+msgstr "ال&كمية"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/order_create_dialog.py
@@ -3564,7 +3564,7 @@ msgstr "عنصر واحد"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_new_order_add"
 msgid "&Add item..."
-msgstr "إضافة عنصر…"
+msgstr "إ&ضافة عنصر…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/order_create_dialog.py
@@ -3582,17 +3582,17 @@ msgstr "الطلب لا يحتوي على عناصر بعد."
 #: client/ui/dialogs/order_create_dialog.py
 msgctxt "commerce_new_order_items"
 msgid "&Items of the new order"
-msgstr "عناصر الطلب الجديد"
+msgstr "&عناصر الطلب الجديد"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_new_order_remove"
 msgid "&Remove item"
-msgstr "إزالة عنصر"
+msgstr "إ&زالة عنصر"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_new_order_send"
 msgid "&Send order"
-msgstr "إرسال الطلب"
+msgstr "إر&سال الطلب"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_new_order_sent"
@@ -3626,7 +3626,7 @@ msgstr "فقط حساب واتساب للأعمال يمكنه الرد على �
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_accept"
 msgid "&Accept order"
-msgstr "قبول الطلب"
+msgstr "&قبول الطلب"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_accepted"
@@ -3709,7 +3709,7 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_decline"
 msgid "D&ecline order..."
-msgstr "رفض الطلب…"
+msgstr "ر&فض الطلب…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_decline_note"
@@ -3727,7 +3727,7 @@ msgstr "تم رفض الطلب."
 #: client/ui/dialogs/order_update_dialog.py
 msgctxt "commerce_order_details"
 msgid "&Details"
-msgstr "التفاصيل"
+msgstr "ال&تفاصيل"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_info_confirmed"
@@ -3738,7 +3738,7 @@ msgstr "تم تأكيد معلومات الطلب"
 #: client/ui/dialogs/order_update_dialog.py
 msgctxt "commerce_order_items"
 msgid "&Items of the order"
-msgstr "عناصر الطلب"
+msgstr "&عناصر الطلب"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/order_dialog.py
 #, python-brace-format
@@ -3831,7 +3831,7 @@ msgstr "تحديث الطلب"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_update_status"
 msgid "&Update status..."
-msgstr "تحديث الحالة…"
+msgstr "تحديث ال&حالة…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/core/commerce.py
 msgctxt "commerce_out_of_stock"
@@ -3883,7 +3883,7 @@ msgstr "المنتجات: {count}."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_products_list"
 msgid "&Products in the catalog"
-msgstr "المنتجات في الكتالوج"
+msgstr "ال&منتجات في الكتالوج"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_quantity_label"
@@ -3904,7 +3904,7 @@ msgstr "الكمية"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_refresh"
 msgid "Re&fresh"
-msgstr "تحديث"
+msgstr "تح&ديث"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_status_canceled"
@@ -13389,7 +13389,7 @@ msgstr "النماذج في مجلدات أخرى"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_external_add_btn"
 msgid "A&dd..."
-msgstr "إضافة…"
+msgstr "إ&ضافة…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -13438,7 +13438,7 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_external_check_btn"
 msgid "Verif&y"
-msgstr "تحقق"
+msgstr "ت&حقق"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -13523,7 +13523,7 @@ msgstr "نماذج whisper.cpp (*.bin)|*.bin|جميع الملفات (*.*)|*.*"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_external_find_btn"
 msgid "Fi&nd..."
-msgstr "بحث…"
+msgstr "&بحث…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -13546,7 +13546,7 @@ msgstr "جاري البحث في ذاكرة التخزين المؤقت لـ Hug
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_external_forget_btn"
 msgid "&Forget"
-msgstr "نسيان"
+msgstr "&نسيان"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -13823,7 +13823,7 @@ msgstr "غير مؤكد"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_external_use_btn"
 msgid "&Use"
-msgstr "استخدام"
+msgstr "ا&ستخدام"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -16267,7 +16267,7 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_add"
 msgid "&Add chats"
-msgstr "إضافة دردشات"
+msgstr "إ&ضافة دردشات"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/chat_lists.py
@@ -16304,17 +16304,17 @@ msgstr "تم حفظ التغيير."
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_close"
 msgid "&Close"
-msgstr "إغلاق"
+msgstr "إ&غلاق"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_create"
 msgid "Cr&eate list"
-msgstr "إنشاء قائمة"
+msgstr "إ&نشاء قائمة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_delete"
 msgid "&Delete list"
-msgstr "حذف القائمة"
+msgstr "&حذف القائمة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 #, python-brace-format
@@ -16351,7 +16351,7 @@ msgstr "جاري تحميل قوائم واتساب…"
 #: client/ui/conversation_panel/chat_lists.py client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_manage"
 msgid "Mana&ge WhatsApp lists"
-msgstr "إدارة قوائم واتساب"
+msgstr "إ&دارة قوائم واتساب"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_name"
@@ -16397,17 +16397,17 @@ msgstr "لم يقبل واتساب هذا التغيير."
 #: client/ui/conversation_panel/chat_lists.py client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_reload"
 msgid "Refre&sh lists"
-msgstr "تحديث القوائم"
+msgstr "&تحديث القوائم"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_remove"
 msgid "Re&move chats"
-msgstr "إزالة الدردشات"
+msgstr "إ&زالة الدردشات"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_rename"
 msgid "Re&name list"
-msgstr "إعادة تسمية القائمة"
+msgstr "إ&عادة تسمية القائمة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/chat_lists.py
