@@ -4611,7 +4611,40 @@ export async function starMessage(req: Request, res: Response) {
    */
   const { messageId, star = true } = req.body;
   try {
-    const response = await req.client.starMessage(messageId, star);
+    // WA-JS (4.7.2) stars through Cmd.sendStarMsgs(), which only fires the UI
+    // event "send_star_msgs". Its one listener is a React ref
+    // (live 2026-10-29: `t.current == null ? void 0 : t.current(...)`) that is
+    // empty whenever the component behind it is not mounted, as in WinZapp's
+    // headless page: nothing was sent, and WA-JS answered the old state.
+    // WAWebChatSendMessages.sendStarMsgs(chat, msgs, star) is what that
+    // listener calls in the end (the toast aside), so call it directly; the
+    // WA-JS path stays for a build that renames it.
+    let response: any = await req.client.page.evaluate(
+      async ({ messageId, star }) => {
+        const WPP = (window as any).WPP;
+        let module: any = null;
+        try {
+          module = WPP?.loader?.moduleRequire?.('WAWebChatSendMessages');
+        } catch (_) {}
+        if (typeof module?.sendStarMsgs !== 'function') {
+          try {
+            module = (window as any).require?.('WAWebChatSendMessages');
+          } catch (_) {}
+        }
+        if (typeof module?.sendStarMsgs !== 'function') return null;
+        const msg = await WPP.chat.getMessageById(messageId);
+        const chat =
+          WPP.whatsapp.ChatStore.get(msg.id.remote) ||
+          WPP.chat.get?.(msg.id.remote.toString());
+        if (!chat) return null;
+        await module.sendStarMsgs(chat, [msg], Boolean(star));
+        return { id: msg.id.toString(), star: Boolean(msg.star) };
+      },
+      { messageId, star }
+    );
+    if (response == null) {
+      response = await req.client.starMessage(messageId, star);
+    }
 
     res.status(200).json({ status: 'success', response: response });
   } catch (error) {
