@@ -4,6 +4,8 @@ Această versiune aduce comunitățile și o fereastră de setări reorganizată
 
 NOUTĂȚI
 
+- Limba arabă este acum disponibilă în Setări > General > Limbă, cu texte în arabă în programul de instalare și dezinstalare pentru Windows.
+
 - WPPConnect Server a fost actualizat la 2.10.70, care întărește rutele de administrare (listarea și copia de rezervă a sesiunilor cer acum cheia secretă într-un antet, nu în adresă), folderele de sesiune pe care le șterge la deconectare și modul de separare a listelor de contacte. Curățarea sesiunilor la închidere cu un API personalizat a fost adaptată acestei schimbări.
 
 - Un apel de grup care a sunat și nu a fost preluat este acum înregistrat în grupul său, iar notificarea apelului arată grupul: nu mai apare ca un apel privat de la cel care l-a început.
