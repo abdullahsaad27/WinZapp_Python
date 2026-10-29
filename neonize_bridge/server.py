@@ -42,6 +42,7 @@ import contacts
 import chat_listing
 import chats
 import chat_aliases
+import chat_timers
 import chat_remaining
 import groups
 import groups_extra
@@ -156,7 +157,7 @@ def jid_text(jid) -> str:
     return f"{jid.User}@{jid.Server}"
 
 
-class Session(chat_aliases.ChatAlias, group_receipts.GroupReceipts):
+class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, group_receipts.GroupReceipts):
     """One account: the neonize client, the state in WPPConnect's vocabulary and
     the bridge between neonize's thread and the aiohttp loop."""
 
@@ -682,6 +683,8 @@ class Session(chat_aliases.ChatAlias, group_receipts.GroupReceipts):
             self.call_media = new_call_media(self.name, cli.uuid, self.emit, self._phone_of_lid)
             # the creator a group call placed here carries, for the lobby query
             self.call_media.own_creator = lambda: self.lid_device
+        # every message to a chat with temporary messages carries its timer
+        chat_timers.install(cli, self.chat_timer)
         calls.register_events(cli, self)
         presence.register_events(cli, self)
         group_events.register_events(cli, self)
@@ -736,6 +739,10 @@ class Session(chat_aliases.ChatAlias, group_receipts.GroupReceipts):
             try:
                 o = e.Info.MessageSource
                 chat = jid_text(o.Chat)
+                try:
+                    self.observe_timer(chat, e.Message)
+                except Exception:
+                    log.exception("temporary messages timer")
                 if self._reaction_received(chat, o, e):
                     return
                 if self._vote_received(o, e):
@@ -773,6 +780,9 @@ class Session(chat_aliases.ChatAlias, group_receipts.GroupReceipts):
             try:
                 if e.Name and e.Name.Name:
                     self.db.chat(jid_text(e.JID), name=e.Name.Name)
+                if e.HasField("Ephemeral"):
+                    self.record_timer(jid_text(e.JID), int(e.Ephemeral.DisappearingTimer)
+                                      if e.Ephemeral.IsEphemeral else 0)
             except Exception:
                 log.exception("group changed")
             group_events.group_changed(c, self, e)    # groups.update (see group_events)
@@ -1135,6 +1145,9 @@ class Session(chat_aliases.ChatAlias, group_receipts.GroupReceipts):
                 fields["muted"] = int(c.muteEndTime)
             if c.HasField("locked"):
                 fields["locked"] = int(bool(c.locked))
+            if c.HasField("ephemeralExpiration"):
+                fields["ephemeral"] = int(c.ephemeralExpiration)
+                fields["ephemeral_ts"] = int(c.ephemeralSettingTimestamp or 0)
             chats.append((jid, {k: v for k, v in fields.items() if v is not None}))
             count = len(rows)
             for h in c.messages:

@@ -73,7 +73,8 @@ def migrate_legacy_schema(conn):
 # nobody's to read nor to mark as read.
 SYSTEM_TYPES = ("gp2", "call_log")
 
-CHAT_FIELDS = {"name", "ts", "unread", "archived", "pinned", "muted", "locked"}
+CHAT_FIELDS = {"name", "ts", "unread", "archived", "pinned", "muted", "locked",
+               "ephemeral", "ephemeral_ts"}
 
 
 #: receipt stage -> WhatsApp Web ack
@@ -126,6 +127,12 @@ class Store:
                 self._conn.execute("ALTER TABLE chats ADD COLUMN read_ts INTEGER DEFAULT 0")
             except sqlite3.OperationalError:
                 pass
+            # the chat's temporary-messages timer, in seconds (chat_timers.py)
+            for column in ("ephemeral", "ephemeral_ts"):
+                try:
+                    self._conn.execute(f"ALTER TABLE chats ADD COLUMN {column} INTEGER DEFAULT 0")
+                except sqlite3.OperationalError:
+                    pass
             lower_dates_raised_by_notices(self._conn)
 
     def close(self):
@@ -144,6 +151,14 @@ class Store:
                 self._conn.execute(f"UPDATE chats SET {sets} WHERE jid=?",
                                    (*fields.values(), jid))
             self._conn.commit()
+
+    def chat_timer(self, jid):
+        """(seconds, setting timestamp) of the chat's temporary messages; None
+        when the chat is not stored. (0, ...) is off."""
+        with self._lock:
+            r = self._conn.execute(
+                "SELECT ephemeral, ephemeral_ts FROM chats WHERE jid=?", (jid,)).fetchone()
+        return None if r is None else (int(r["ephemeral"] or 0), int(r["ephemeral_ts"] or 0))
 
     def chats_in_batch(self, rows):
         """Rows (jid, fields) as `chat` writes them, in one transaction: a
