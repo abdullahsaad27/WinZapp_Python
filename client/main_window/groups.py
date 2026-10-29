@@ -480,11 +480,25 @@ class GroupsMixin:
                 logging.info(f"[get_group_info] response type={type(response).__name__} keys={list(response.keys()) if isinstance(response, dict) else response}")
                 if isinstance(response, dict):
                     self._reconcile_group_info_name(jid, response)
+                    self._remember_group_kind(jid, response)
                     return response
                 return {}
         except Exception as e:
             logging.error(f"[get_group_info] error: {e}")
         return {}
+
+    def _remember_group_kind(self, jid: str, info: dict) -> None:
+        """Keep on the chat whether the group is a community's announcement
+        group (groupMetadata.defaultSubgroup), which list-chats leaves out:
+        the replies to an announcement are offered only there."""
+        flag = info.get("defaultSubgroup")
+        chat = getattr(self, "chats", {}).get(jid)
+        if not isinstance(flag, bool) or not isinstance(chat, dict):
+            return
+        group_meta = chat.get("groupMetadata")
+        if not isinstance(group_meta, dict):
+            group_meta = chat["groupMetadata"] = {}
+        group_meta["defaultSubgroup"] = flag
 
     def get_group_info_recent(self, jid: str, max_age: float = 5.0) -> dict:
         """get_group_info(), unless a non-empty answer for `jid` is younger

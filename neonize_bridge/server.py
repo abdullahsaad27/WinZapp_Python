@@ -2317,6 +2317,8 @@ def create_app(folder, fixed=""):
             "desc": g.GroupTopic.Topic, "announce": bool(g.GroupAnnounce.IsAnnounce),
             "restrict": bool(g.GroupLocked.isLocked), "owner": owner,
             "creation": msgmap.seconds(g.GroupCreated),
+            # a community's announcement group (the client offers replies there)
+            "defaultSubgroup": bool(g.GroupIsDefaultSub.IsDefaultSubGroup),
             "participants": participants}
 
     async def group_info(req):
