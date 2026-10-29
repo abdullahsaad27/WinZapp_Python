@@ -343,6 +343,7 @@ class TestResultNotes:
 #: what is being asserted about: the key, the placeholder and the endonym are
 #: all identical between a wording that claims a choice and one that does not.
 _CLAIMS_A_CHOICE = {
+    "ar": ("اخترت", "اخترتها", "المختارة", "المحددة", "تحديدها", "تفضيل"),
     "pt-BR": ("escolh",),
     "pt-PT": ("escolh",),
     "en-US": ("chose", "chosen", "choose", "picked", "selected"),
@@ -358,6 +359,7 @@ _CLAIMS_A_CHOICE = {
 #: loudly instead of passing unchecked. Turkish drops a vowel when the noun
 #: takes a suffix ("metin" → "metni", "metne"), hence the second stem.
 _TEXT_WORDS = {
+    "ar": ("نص",),
     "pt-BR": ("texto",),
     "pt-PT": ("texto",),
     "en-US": ("text",),

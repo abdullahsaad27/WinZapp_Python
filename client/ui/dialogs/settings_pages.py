@@ -20,6 +20,7 @@ import unicodedata
 
 import wx
 from wx.lib.scrolledpanel import ScrolledPanel
+from ui.modal_utils import end_modal_if_running
 
 
 def owner_window(active, fallback):
@@ -91,7 +92,11 @@ class SubPageDialog(wx.Dialog):
 
     def _on_char(self, event):
         if event.GetKeyCode() == wx.WXK_ESCAPE:
-            self.EndModal(wx.ID_OK)
+            if not end_modal_if_running(self, wx.ID_OK):
+                try:
+                    self.Close()
+                except Exception:
+                    pass
             return
         event.Skip()
 
