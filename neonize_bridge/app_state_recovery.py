@@ -49,3 +49,68 @@ class RecoveryGate:
                     self._failed_at.pop(name, None)
                 else:
                     self._failed_at[name] = self._clock()
+
+
+# ── One app-state operation at a time ────────────────────────────────────────
+#
+# Why the collection kept breaking right after each recovery: whatsmeow's
+# fetchAppState holds appStateSyncLock, but sendAppState does not. Two state
+# notices sent together (several chats marked read at once, an archive while
+# a notice from the phone is being fetched) read the same version; the second
+# gets 409, applies the conflicting patches on top of a version the first one
+# already moved past, and the local LTHash no longer matches the server's.
+# WhatsApp Web keeps one queue per collection. The bridge's own calls now go
+# through one lock (whatsmeow's internal fetches are covered by
+# neonize_patches/whatsmeow/0008).
+
+def serialize(client, lock):
+    """Make the client's send_app_state and fetch_app_state take `lock`, so
+    the bridge never runs two app-state operations at once, wherever they come
+    from (state notices, labels, contacts, the mirror). A client without them
+    (a test's stand-in) is left alone."""
+    for name in ("send_app_state", "fetch_app_state"):
+        original = getattr(client, name, None)
+        if original is None:
+            continue
+
+        def locked(*args, _original=original, **kwargs):
+            with lock:
+                return _original(*args, **kwargs)
+
+        setattr(client, name, locked)
+
+
+class PendingReads:
+    """The chats whose read/unread notice the phone has not taken yet, the
+    newest wish for each. WhatsApp Web keeps an unsent mutation and sends it
+    once the collection works again; dropping it left the chat unread on the
+    phone after it was read in WinZapp."""
+
+    def __init__(self):
+        self._guard = threading.Lock()
+        self._wanted = {}
+
+    def put(self, chat, read):
+        with self._guard:
+            self._wanted[chat] = bool(read)
+
+    def restore(self, chat, read):
+        """Put back a notice that failed again, unless a newer wish for the
+        same chat arrived meanwhile (that one wins)."""
+        with self._guard:
+            self._wanted.setdefault(chat, bool(read))
+
+    def discard(self, chat):
+        with self._guard:
+            self._wanted.pop(chat, None)
+
+    def take(self):
+        """Every pending (chat, read), emptied: whoever takes them sends them
+        (and puts back the ones that fail again)."""
+        with self._guard:
+            items, self._wanted = list(self._wanted.items()), {}
+        return items
+
+    def __len__(self):
+        with self._guard:
+            return len(self._wanted)

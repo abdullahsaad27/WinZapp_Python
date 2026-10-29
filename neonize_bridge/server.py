@@ -176,8 +176,12 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, read_receipts.Read
         self.thread = None
         self.lifecycle = session_lifecycle.Lifecycle()   # state + generation (session_lifecycle.py)
         self._lifecycle_lock = threading.RLock()    # begin/stop one at a time
-        # one request for a fresh app-state copy per collection (app_state_recovery)
+        # one request for a fresh app-state copy per collection, one app-state
+        # operation at a time, and the read notices still to send (app_state_recovery)
         self._recovery_gate = app_state_recovery.RecoveryGate()
+        self._app_state_lock = threading.RLock()
+        self._pending_reads = app_state_recovery.PendingReads()
+        self._flushing_reads = threading.Lock()
         self.on_unlink = None       # called when the phone removes the device
         self.pairing_repairs = pairing_repair.Budget()
         self.urlcode = None
@@ -623,6 +627,7 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, read_receipts.Read
             media.start_pump(lambda: self.client is client and self.lifecycle.current(generation))
         threading.Thread(target=self._check_always, daemon=True).start()
         threading.Thread(target=self._copy_always, daemon=True).start()
+        self.flush_pending_reads()      # read notices kept while disconnected
 
     def _on_unlinked(self, generation, c):
         """The phone removed the device (LoggedOutEv, or a logout ConnectFailure)."""
@@ -690,6 +695,8 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, read_receipts.Read
             self.call_media.own_creator = lambda: self.lid_device
         # every message to a chat with temporary messages carries its timer
         chat_timers.install(cli, self.chat_timer)
+        # never two app-state operations at once (app_state_recovery.serialize)
+        app_state_recovery.serialize(cli, self._app_state_lock)
         calls.register_events(cli, self)
         presence.register_events(cli, self)
         group_events.register_events(cli, self)
@@ -1346,7 +1353,10 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, read_receipts.Read
         """Asks the phone for a fresh copy of the state (the iPhone only answers with
         WhatsApp open on the screen). One request per collection at a time, and
         none for a while after one went unanswered (app_state_recovery.py)."""
-        return self._recovery_gate.run(name, lambda: self._ask_phone_for_collection(name))
+        recovered = self._recovery_gate.run(name, lambda: self._ask_phone_for_collection(name))
+        if recovered:
+            self.flush_pending_reads()
+        return recovered
 
     def _ask_phone_for_collection(self, name):
         log.warning("state %s: asking the phone for a fresh copy", name)
@@ -1415,7 +1425,17 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, read_receipts.Read
 
     def state_read(self, conversation, read_flag):
         """Marks the chat as read (or unread) on the phone and the other devices,
-        through the markChatAsRead state notice."""
+        through the markChatAsRead state notice. One the phone does not take is
+        kept and sent again once the collection works (flush_pending_reads)."""
+        if self._send_read_notice(conversation, read_flag):
+            self._pending_reads.discard(conversation)
+            self.flush_pending_reads()
+            return True
+        self._pending_reads.put(conversation, read_flag)
+        return False
+
+    def _send_read_notice(self, conversation, read_flag):
+        """The markChatAsRead notice itself: True if WhatsApp accepted it."""
         from neonize.proto.Neonize_pb2 import MutationInfo, PatchInfo
         from neonize.proto.waCommon.WACommon_pb2 import MessageKey
         from neonize.proto.waSyncAction.WAWebProtobufSyncAction_pb2 import (
@@ -1451,6 +1471,29 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, read_receipts.Read
         except Exception:
             log.exception("state notice (read) not accepted")
             return False
+
+    def flush_pending_reads(self):
+        """Send, on a thread, the read notices the phone did not take before.
+        One flush at a time; a notice that fails again goes back in the queue."""
+        if not len(self._pending_reads) or not self._flushing_reads.acquire(blocking=False):
+            return
+
+        def flush():
+            try:
+                pending = self._pending_reads.take()
+                for index, (conversation, read_flag) in enumerate(pending):
+                    connected = self.client is not None and self.status == "CONNECTED"
+                    if connected and self._send_read_notice(conversation, read_flag):
+                        continue
+                    # still broken: this one and the rest wait for the next success,
+                    # behind any newer wish for the same chat
+                    for later, flag in pending[index:]:
+                        self._pending_reads.restore(later, flag)
+                    break
+            finally:
+                self._flushing_reads.release()
+
+        threading.Thread(target=flush, daemon=True, name="pending-reads").start()
 
     def send_state(self, index, version, kind, value, conversation, extra=()):
         """Generic state notice (archive, pin...): True if WhatsApp accepted."""
