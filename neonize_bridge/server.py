@@ -43,6 +43,7 @@ import chat_listing
 import chats
 import chat_aliases
 import chat_timers
+import read_receipts
 import chat_remaining
 import groups
 import groups_extra
@@ -157,7 +158,8 @@ def jid_text(jid) -> str:
     return f"{jid.User}@{jid.Server}"
 
 
-class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, group_receipts.GroupReceipts):
+class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, read_receipts.ReadReceipts,
+              group_receipts.GroupReceipts):
     """One account: the neonize client, the state in WPPConnect's vocabulary and
     the bridge between neonize's thread and the aiohttp loop."""
 
@@ -1570,7 +1572,6 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, group_receipts.Gro
 
     def mark_played(self, serial):
         from neonize.utils import build_jid
-        from neonize.utils.enum import ReceiptType
         from_me, conversation, mid, author = self.id_parts(serial)
         if from_me or self.client is None or self.status != "CONNECTED":
             return False
@@ -1580,7 +1581,7 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, group_receipts.Gro
         qu, _, qsrv = who.partition("@")
         try:
             self.client.mark_read(mid, chat=build_jid(cu, csrv), sender=build_jid(qu, qsrv),
-                                  receipt=ReceiptType.PLAYED)
+                                  receipt=self.receipt_for(conversation, "PLAYED"))
         except Exception:
             log.exception("mark_played")
             return False
@@ -1611,7 +1612,6 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, group_receipts.Gro
         if not to_read:
             return 0, True
         from neonize.utils import build_jid
-        from neonize.utils.enum import ReceiptType
 
         def jid_of(text):
             u, _, srv = msgmap.jid_whatsmeow(text).partition("@")
@@ -1621,10 +1621,12 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, group_receipts.Gro
         for mid, author, ts in to_read:
             by_author.setdefault(author, []).append(mid)
         sent = True
+        # read-self when the account hides its read receipts (read_receipts.py)
+        receipt = self.receipt_for(conversation, "READ")
         for author, ids in by_author.items():
             try:
                 self.client.mark_read(*ids, chat=jid_of(conversation), sender=jid_of(author),
-                                      receipt=ReceiptType.READ)
+                                      receipt=receipt)
             except Exception:
                 log.exception("mark_read")
                 sent = False
