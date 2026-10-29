@@ -492,6 +492,32 @@ msgid "Add more &files"
 msgstr "Dodaj więcej &plików"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_button"
+msgid "E&xport this account's logs..."
+msgstr "&Eksportuj logi tego konta..."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+#, python-brace-format
+msgctxt "advanced_export_logs_done"
+msgid "Logs exported. Number of files: {count}."
+msgstr "Wyeksportowano logi. Liczba plików: {count}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_failed"
+msgid "Could not save the logs there. Try another folder."
+msgstr "Nie udało się zapisać logów w tym miejscu. Spróbuj innego folderu."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_none"
+msgid "There are no logs to export."
+msgstr "Brak logów do wyeksportowania."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_working"
+msgid "Exporting the logs..."
+msgstr "Eksportowanie logów..."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
 msgctxt "advanced_fixed_port_check"
 msgid "Start the local API on a &fixed port"
 msgstr "&Uruchamiaj lokalne API na stałym porcie"
@@ -9754,6 +9780,7 @@ msgstr "Nie ma wiadomości na tej pozycji."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/media_files.py
 #: client/ui/conversation_panel/message_menu.py client/ui/conversations.py
+#: client/ui/dialogs/advanced_tab.py
 #: client/ui/dialogs/conversation_data_dialog.py client/ui/media_viewer.py
 msgctxt "save_as"
 msgid "Save as..."
