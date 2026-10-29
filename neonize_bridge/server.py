@@ -36,6 +36,7 @@ import ongoing_calls
 import group_events
 import contact_events
 import app_state_mirror
+import app_state_recovery
 import labels
 import communities
 import contacts
@@ -175,6 +176,8 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, read_receipts.Read
         self.thread = None
         self.lifecycle = session_lifecycle.Lifecycle()   # state + generation (session_lifecycle.py)
         self._lifecycle_lock = threading.RLock()    # begin/stop one at a time
+        # one request for a fresh app-state copy per collection (app_state_recovery)
+        self._recovery_gate = app_state_recovery.RecoveryGate()
         self.on_unlink = None       # called when the phone removes the device
         self.pairing_repairs = pairing_repair.Budget()
         self.urlcode = None
@@ -1341,7 +1344,11 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, read_receipts.Read
 
     def _recover_collection(self, name):
         """Asks the phone for a fresh copy of the state (the iPhone only answers with
-        WhatsApp open on the screen)."""
+        WhatsApp open on the screen). One request per collection at a time, and
+        none for a while after one went unanswered (app_state_recovery.py)."""
+        return self._recovery_gate.run(name, lambda: self._ask_phone_for_collection(name))
+
+    def _ask_phone_for_collection(self, name):
         log.warning("state %s: asking the phone for a fresh copy", name)
         try:
             self.client.request_app_state_recovery(name)
@@ -1682,6 +1689,12 @@ def create_app(folder, fixed=""):
     app["sio"] = sio                        # the tests look at who is connected
     state = {"sessions": {}, "fixed": fixed}
     active_file = os.path.join(folder, "active.json")
+    # send-seen gets threads of its own: marking a chat read can wait on the
+    # phone for a fresh app-state copy, and on the executor every other route
+    # uses it starved the sends (a message past the client's 25 s was reported
+    # as not confirmed and went out a moment later).
+    from concurrent.futures import ThreadPoolExecutor
+    marking = ThreadPoolExecutor(max_workers=2, thread_name_prefix="send-seen")
 
     def read_active():
         try:
@@ -2002,14 +2015,15 @@ def create_app(folder, fixed=""):
         keys = await in_thread(s.chat_keys, phone) if phone else []
         if not keys:
             return ok(status="success", response={"data": [False]})
+        loop = asyncio.get_running_loop()
         if body.get("unread"):        # "mark as unread"
-            await in_thread(s.mark_unread, keys[0])
+            await loop.run_in_executor(marking, s.mark_unread, keys[0])
             confirmed = True
         else:
             s.open_chat = keys[0]      # the app only sends send-seen for the chat the user opened
             confirmed = True
             for key in keys:
-                _, sent = await in_thread(s.read_and_confirm, key, True)
+                _, sent = await loop.run_in_executor(marking, s.read_and_confirm, key, True)
                 confirmed = confirmed and sent
         return ok(status="success", response={"data": [confirmed]})
 
