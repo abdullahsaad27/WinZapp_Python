@@ -196,13 +196,17 @@ class ShortcutsTabMixin:
             i18n.t('tab_shortcuts').replace('&', ''), page,
             lambda control=None: self._shortcuts_dialog.open(control))
         self._hotkey_field.Bind(wx.EVT_TEXT, self._shortcut_hotkey_changed)
-        self._refresh_shortcut_rows()
+        # The rows are built once, by SettingsDialog.__init__ after the values
+        # are loaded: building them here too cost a whole tree (0.2 s with a
+        # screen reader running) that was thrown away a moment later.
 
     def _shortcut_hotkey_changed(self, event):
         # Coalesced and after the event: loading the dialog's values sets this
         # field, which rebuilt the whole tree a moment after it was built,
         # while the Settings window was still being put together.
         event.Skip()
+        if getattr(self, '_loading_values', False):
+            return       # SettingsDialog.__init__ builds the rows after loading
         if getattr(self, '_shortcut_refresh_pending', False):
             return
         self._shortcut_refresh_pending = True

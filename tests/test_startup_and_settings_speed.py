@@ -90,3 +90,20 @@ def test_hotkey_changes_rebuild_the_shortcuts_tree_once_and_later(monkeypatch):
     assert built == [] and len(later) == 1
     later[0]()
     assert built == [1]
+
+
+def test_the_shortcuts_tree_is_built_once_when_settings_open(monkeypatch):
+    """Built by SettingsDialog.__init__ after the values are loaded; neither
+    the page's own build nor the hotkey field filled by the load rebuild it."""
+    import inspect
+    import wx
+    from ui.dialogs.settings_dialog import SettingsDialog
+    build = inspect.getsource(ShortcutsTabMixin._build_shortcuts_page)
+    assert "self._refresh_shortcut_rows()" not in build
+    init = inspect.getsource(SettingsDialog.__init__)
+    assert init.index("self._load_values()") < init.index("self._refresh_shortcut_rows()")
+    later = []
+    monkeypatch.setattr(wx, "CallAfter", lambda fn, *args: later.append(fn))
+    tab = SimpleNamespace(_loading_values=True)
+    ShortcutsTabMixin._shortcut_hotkey_changed(tab, SimpleNamespace(Skip=lambda: None))
+    assert later == []
