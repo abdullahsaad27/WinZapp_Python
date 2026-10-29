@@ -1016,18 +1016,22 @@ class Session(chat_aliases.ChatAlias, chat_timers.ChatTimers, read_receipts.Read
                     return
                 error_info = {"name": "LinkCodeError", "message": "failed to generate the code",
                               "rateLimited": False}
+                # a Brazilian mobile in both forms (9th digit), the likelier first
+                candidates = pairing.phone_candidates(phone_number)
                 for attempt in range(5):
                     if not self.lifecycle.current(generation):
                         return
+                    number = candidates[attempt % len(candidates)]
                     try:
-                        pairing_code = cli.PairPhone("".join(ch for ch in phone_number if ch.isdigit()),
-                                                     True, ClientName.WINDOWS, ClientType.EDGE)
+                        pairing_code = cli.PairPhone(number, True, ClientName.WINDOWS,
+                                                     ClientType.EDGE)
                         self.emit("phoneCode", {"session": self.name, "data": pairing_code})
                         self._watch_code(generation)
                         return
                     except Exception as error:
-                        log.warning("pairing code, attempt %d: %s",
-                                    attempt + 1, type(error).__name__)
+                        log.warning("pairing code, attempt %d (form %d of %d): %s",
+                                    attempt + 1, attempt % len(candidates) + 1,
+                                    len(candidates), type(error).__name__)
                         error_info = pairing.code_error(error)
                         if error_info["rateLimited"]:
                             break           # the quota is the number's: repeating keeps it alive
