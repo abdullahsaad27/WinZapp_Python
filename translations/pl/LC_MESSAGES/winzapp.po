@@ -4883,23 +4883,31 @@ msgstr ""
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/conversation_data_dialog.py
-msgctxt "conversation_auto_transcribe_local_check"
+msgctxt "conversation_auto_transcribe_label"
 msgid ""
-"Transcribe the voice messages, audio and videos received in this "
-"conversation automatically, locally with Whisper"
+"Automatic transcription of the voice messages, audio and videos received in "
+"this conversation"
 msgstr ""
-"Automatycznie transkrybuj lokalnie za pomocą Whisper odebrane w tym czacie "
-"wiadomości głosowe, nagrania audio i filmy"
+"Automatyczna transkrypcja wiadomości głosowych, nagrań audio i filmów "
+"odebranych w tym czacie"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/conversation_data_dialog.py
-msgctxt "conversation_auto_transcribe_online_check"
-msgid ""
-"Transcribe the voice messages and audio received in this conversation "
-"automatically, with the online providers"
-msgstr ""
-"Automatycznie transkrybuj u dostawców online odebrane w tym czacie "
-"wiadomości głosowe i nagrania audio"
+msgctxt "conversation_auto_transcribe_local"
+msgid "Local, with Whisper"
+msgstr "Lokalnie, za pomocą Whisper"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/conversation_data_dialog.py
+msgctxt "conversation_auto_transcribe_none"
+msgid "None"
+msgstr "Brak"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/conversation_data_dialog.py
+msgctxt "conversation_auto_transcribe_online"
+msgid "Online, with the AI providers"
+msgstr "Online, u dostawców AI"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/archived_panel.py
@@ -5637,6 +5645,7 @@ msgstr "&Wpisz swój numer telefonu"
 #: client/ui/conversation_panel/media_files.py
 #: client/ui/conversation_panel/voice_recording.py
 #: client/ui/dialogs/advanced_tab.py client/ui/dialogs/settings_dialog.py
+#: client/ui/dialogs/transcription_options.py
 #, python-brace-format
 msgctxt "error"
 msgid "{app_name} Error"
@@ -8547,13 +8556,16 @@ msgctxt "pairing_engine_restart_failed"
 msgid ""
 "WinZapp could not restart by itself, so the connection engine was not "
 "changed."
-msgstr "WinZapp nie mógł uruchomić się ponownie samodzielnie, więc silnik połączenia nie został zmieniony."
+msgstr ""
+"WinZapp nie mógł uruchomić się ponownie samodzielnie, więc silnik połączenia"
+" nie został zmieniony."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/connect.py
 #, python-brace-format
 msgctxt "pairing_engine_switch_message"
 msgid "WinZapp will restart to connect with {engine}. Continue?"
-msgstr "WinZapp uruchomi się ponownie, aby połączyć się przez {engine}. Kontynuować?"
+msgstr ""
+"WinZapp uruchomi się ponownie, aby połączyć się przez {engine}. Kontynuować?"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/connect.py
 #: client/ui/dialogs/connect_engine.py
@@ -11107,6 +11119,32 @@ msgid "Up"
 msgstr "W górę"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+msgctxt "shortcut_keys_search_clear"
+msgid "C&lear keys"
+msgstr "&Wyczyść klawisze"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+#, python-brace-format
+msgctxt "shortcut_keys_search_found"
+msgid "Shortcuts with {keys}: {count}"
+msgstr "Skróty z {keys}: {count}"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+msgctxt "shortcut_keys_search_label"
+msgid "Search by &keys (press the combination)"
+msgstr "Szukaj według &klawiszy (naciśnij kombinację)"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+#, python-brace-format
+msgctxt "shortcut_keys_search_none"
+msgid "No shortcut uses {keys}."
+msgstr "Żaden skrót nie używa {keys}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "shortcut_newline"
 msgid "Insert a new line"
 msgstr "Wstaw nowy wiersz"
@@ -12872,6 +12910,18 @@ msgid ""
 msgstr ""
 "Zastosuj nowy folder modeli, zanim pobierzesz, naprawisz, sprawdzisz lub "
 "usuniesz model."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/transcription_options.py
+msgctxt "transcription_auto_both_on"
+msgid ""
+"Automatic transcription can be local or online, not both. Turn one of them "
+"off: in Local Transcription or in Online AI: Transcriptions and "
+"Descriptions."
+msgstr ""
+"Automatyczna transkrypcja może być lokalna albo online, nie obie naraz. "
+"Wyłącz jedną z nich: w sekcji „Transkrypcja lokalna” lub „AI online: "
+"transkrypcje i opisy”."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/main_window/auto_transcription.py
@@ -17587,3 +17637,19 @@ msgstr "&Tak"
 msgctxt "yesterday_at"
 msgid "Yesterday at {time}"
 msgstr "Wczoraj o {time}"
+
+#~ msgctxt "conversation_auto_transcribe_local_check"
+#~ msgid ""
+#~ "Transcribe the voice messages, audio and videos received in this "
+#~ "conversation automatically, locally with Whisper"
+#~ msgstr ""
+#~ "Automatycznie transkrybuj lokalnie za pomocą Whisper odebrane w tym czacie "
+#~ "wiadomości głosowe, nagrania audio i filmy"
+
+#~ msgctxt "conversation_auto_transcribe_online_check"
+#~ msgid ""
+#~ "Transcribe the voice messages and audio received in this conversation "
+#~ "automatically, with the online providers"
+#~ msgstr ""
+#~ "Automatycznie transkrybuj u dostawców online odebrane w tym czacie "
+#~ "wiadomości głosowe i nagrania audio"

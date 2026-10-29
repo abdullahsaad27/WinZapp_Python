@@ -3734,6 +3734,8 @@ class SettingsDialog(ShortcutsTabMixin, TranscriptionTabMixin, ExternalModelsMix
             return False
         if not self._validate_advanced_values():
             return False
+        if not self._validate_automatic_transcription():
+            return False
 
         if not self._ai_page.apply():
             self._notebook.SetSelection(self._notebook.FindPage(self._ai_page))
@@ -4636,6 +4638,10 @@ class SettingsDialog(ShortcutsTabMixin, TranscriptionTabMixin, ExternalModelsMix
             self._loading_values = False
             self._maybe_warn_restart_required()
             self._dirty = False
+            # Hiding the focused button would leave Windows to pick where the
+            # focus goes; OK is the button beside it.
+            if wx.Window.FindFocus() is self._apply_btn:
+                self._ok_btn.SetFocus()
             self._apply_btn.Hide()
             # The notebook keeps its size, so the pages' own sizers would not
             # recalculate on their own: a checkbox whose label got longer in
