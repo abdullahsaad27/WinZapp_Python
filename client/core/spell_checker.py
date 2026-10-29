@@ -198,6 +198,7 @@ LOCALE_NAME_MAX_LENGTH = 85
 # mapping explicit makes the boundary between application locales and
 # spell-checker locales clear.
 _WINZAPP_LANGUAGE_TAGS = {
+    "ar": "ar-SA",
     "en-US": "en-US",
     "es-ES": "es-ES",
     "pl": "pl-PL",

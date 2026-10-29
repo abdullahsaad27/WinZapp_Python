@@ -521,7 +521,7 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_accessibility_enabled_label"
 msgid "Ena&ble AI features (transcription and description)"
-msgstr "تمكين &ميزات الذكاء الاصطناعي (التسجيل النصي والوصف)"
+msgstr "تم&كين ميزات الذكاء الاصطناعي (التفريغ الصوتي والوصف)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/ai_result_dialog.py
@@ -533,7 +533,7 @@ msgstr "أجاب بـ {provider}."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_api_key"
 msgid "&API key"
-msgstr "مفتاح واجهة برمجة التطبيقات"
+msgstr "&مفتاح API"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_ask"
@@ -562,7 +562,7 @@ msgstr "منذ {minutes} دقيقة"
 #: client/ui/dialogs/settings_dialog.py
 msgctxt "ai_auto_button"
 msgid "Automatic transcri&ption and description..."
-msgstr "التسجيل النصي والوصف التلقائيين…"
+msgstr "التف&ريغ والوصف التلقائيان…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -583,7 +583,7 @@ msgstr "إرسال الوسائط تلقائياً؟"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_auto_daily_limit"
 msgid "Daily &limit of automatic requests (0 for no limit):"
-msgstr "الحد اليومي من الطلبات التلقائية (0 بلا حد):"
+msgstr "&الحد اليومي من الطلبات التلقائية (0 بلا حد):"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_auto_describe"
@@ -591,18 +591,18 @@ msgid ""
 "Describe received pictures, stickers and videos automatically, &with the "
 "online providers"
 msgstr ""
-"وصف الصور، والملصقات، ومقاطع الفيديو المستلمة تلقائياً، عبر &موفري الخدمة "
-"عبر الإنترنت"
+"&وصف الصور والملصقات ومقاطع الفيديو المستلمة تلقائيًا، عبر موفري الخدمة على "
+"الإنترنت"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_auto_max_age"
 msgid "&Process automatically the messages received up to:"
-msgstr "معالجة تلقائياً للرسائل المستلمة حتى:"
+msgstr "&معالجة تلقائية للرسائل المستلمة حتى:"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_auto_scope"
 msgid "Conversations t&he automatic options apply to:"
-msgstr "المحادثات التي تسري عليها الخيارات التلقائية:"
+msgstr "ا&لمحادثات التي تسري عليها الخيارات التلقائية:"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_auto_scope_all"
@@ -618,12 +618,13 @@ msgstr "المحادثات التي أشغّلها فقط"
 msgctxt "ai_auto_transcribe"
 msgid ""
 "Transcribe received &voice messages automatically, with the online providers"
-msgstr "تسجيل الرسائل الصوتية المستلمة تلقائياً، عبر الموفّرين على الإنترنت"
+msgstr ""
+"&تفريغ الرسائل الصوتية المستلمة تلقائيًا، عبر موفري الخدمة على الإنترنت"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_auto_used_today"
 msgid "Automatic &requests made today:"
-msgstr "طلبات تلقائية تمت اليوم:"
+msgstr "&طلبات تلقائية تمت اليوم:"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_balanced"
@@ -633,7 +634,7 @@ msgstr "متوازن"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_billing"
 msgid "Usage and &billing"
-msgstr "الاستخدام والفوترة"
+msgstr "الا&ستخدام والفوترة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/ai_result_dialog.py
@@ -674,11 +675,10 @@ msgid ""
 "captions are not sent. Provider data policies apply; the result can be "
 "wrong. Do you want to continue?"
 msgstr ""
-"قد يتم إرسال الوسائط المختارة، وللصور ومقاطع الفيديو أسئلتك والإجابات "
-"السابقة في هذه النافذة، إلى {providers}، بهذا الترتيب، إذا فشلت السابقة. قد "
-"تترتب على ذلك رسوم واجهة برمجة التطبيقات. لا تُرسل أسماء الدردشات أو "
-"التوضيحات. تسري سياسات بيانات الموفّر؛ قد تكون النتيجة غير صحيحة. هل تريد "
-"المتابعة؟"
+"قد يتم إرسال الوسائط المحددة، وللصور ومقاطع الفيديو أسئلتك والإجابات السابقة"
+" في هذه النافذة، إلى {providers}، بهذا الترتيب، إذا فشلت الموفّرات السابقة. "
+"قد يترتب على ذلك رسوم API. لا تُرسل أسماء الدردشات أو التوضيحات. تسري سياسات"
+" بيانات الموفّر؛ قد تكون النتيجة غير صحيحة. هل تريد المتابعة؟"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/ai_result_dialog.py
@@ -694,7 +694,7 @@ msgstr "نسخ أحدث إجابة"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_delete_key"
 msgid "Remove &saved key"
-msgstr "إزالة المفتاح المحفوظ"
+msgstr "&إزالة المفتاح المحفوظ"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/ai_media_demo.py
 msgctxt "ai_demo_lock_test"
@@ -747,7 +747,7 @@ msgstr "وصف"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_describe_images_label"
 msgid "Describe received ima&ges"
-msgstr "وصف الصور المستلمة"
+msgstr "&وصف الصور المستلمة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_describe_sticker_menu"
@@ -757,7 +757,7 @@ msgstr "وصف الملصق"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_describe_stickers_label"
 msgid "&Describe received stickers"
-msgstr "وصف الملصقات المستلمة"
+msgstr "و&صف الملصقات المستلمة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_describe_video_menu"
@@ -767,7 +767,7 @@ msgstr "وصف"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_describe_videos_label"
 msgid "Describe &received videos"
-msgstr "وصف مقاطع الفيديو المستلمة"
+msgstr "وصف مقا&طع الفيديو المستلمة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_detailed"
@@ -935,12 +935,12 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_get_key"
 msgid "Get an API &key"
-msgstr "احصل على مفتاح API"
+msgstr "اح&صل على مفتاح API"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_get_models"
 msgid "&Get models"
-msgstr "احصل على النماذج"
+msgstr "ا&حصل على النماذج"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_hide_action_button"
@@ -948,7 +948,7 @@ msgid ""
 "&Hide the online AI button after the message list (the message menu still "
 "offers it)"
 msgstr ""
-"إخفاء زر الذكاء الاصطناعي عبر الإنترنت بعد قائمة الرسائل (القائمة الخاصة "
+"إ&خفاء زر الذكاء الاصطناعي عبر الإنترنت بعد قائمة الرسائل (القائمة الخاصة "
 "بالرسالة لا تزال تقدمه)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
@@ -971,7 +971,7 @@ msgstr "لم يتم حفظ مفتاح"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_key_readable"
 msgid "&Readable API key"
-msgstr "مفتاح API قابل للقراءة"
+msgstr "مف&تاح API قابل للقراءة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_key_removal_notice"
@@ -980,8 +980,8 @@ msgid ""
 "discard with Cancel. The API key in your provider account will not be "
 "revoked."
 msgstr ""
-"المفتاح المحفوظ مخصص للإزالة من WinZapp. احفظ باستخدام تطبيق أو موافق، أو "
-"ألغِ باستخدام إلغاء. مفتاح API في حساب الموفّر الخاص بك لن يتم إلغاؤه."
+"تم تحديد المفتاح المحفوظ للإزالة من WinZapp. احفظ باستخدام تطبيق أو موافق، "
+"أو تجاهل باستخدام إلغاء. لن يتم إلغاء مفتاح API في حساب الموفّر الخاص بك."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_key_removal_pending"
@@ -1068,17 +1068,17 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_model"
 msgid "Model &identifier (advanced)"
-msgstr "معرف النموذج (متقدم)"
+msgstr "م&عرف النموذج (متقدم)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_model_automatic"
 msgid "&Use the model recommended by WinZapp"
-msgstr "استخدام النموذج الموصى به من WinZapp"
+msgstr "استخ&دام النموذج الموصى به من WinZapp"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_model_choice"
 msgid "&Model"
-msgstr "النموذج"
+msgstr "ال&نموذج"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -1110,7 +1110,7 @@ msgstr "قائمة النماذج جاهزة. اختر من حقل النموذ�
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_pdf_accessible_label"
 msgid "Convert received PDFs to accessib&le text"
-msgstr "تحويل ملفات PDF المستلمة إلى نص يمكن الوصول إليه"
+msgstr "ت&حويل ملفات PDF المستلمة إلى نص يمكن الوصول إليه"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_pdf_accessible_menu"
@@ -1120,7 +1120,7 @@ msgstr "تحويل إلى نص يمكن الوصول إليه"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_privacy_link"
 msgid "&Provider privacy policy"
-msgstr "سياسة خصوصية الموفّر"
+msgstr "س&ياسة خصوصية الموفّر"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_processing_msg"
@@ -1130,7 +1130,7 @@ msgstr "جاري المعالجة بالذكاء الاصطناعي، انتظر
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_profile"
 msgid "Descr&iption detail"
-msgstr "تفاصيل الوصف"
+msgstr "&تفاصيل الوصف"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -1141,27 +1141,27 @@ msgstr "إعداد {provider}"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_provider_configure_button"
 msgid "S&et up selected provider"
-msgstr "إعداد الموفّر المحدد"
+msgstr "&إعداد الموفّر المحدد"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_provider_enabled_checkbox"
 msgid "&Enabled (tried automatically)"
-msgstr "مفعّل (يُجرب تلقائياً)"
+msgstr "م&فعّل (يُجرب تلقائياً)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_provider_list_label"
 msgid "AI providers (order = tr&y order)"
-msgstr "موفّرو الذكاء الاصطناعي (الترتيب = ترتيب المحاولة)"
+msgstr "موفّرو ال&ذكاء الاصطناعي (الترتيب = ترتيب المحاولة)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_provider_move_down_button"
 msgid "Move do&wn"
-msgstr "نقل إلى أسفل"
+msgstr "ن&قل إلى أسفل"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_provider_move_up_button"
 msgid "&Move up"
-msgstr "نقل إلى أعلى"
+msgstr "&نقل إلى أعلى"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_provider_state_disabled"
@@ -1203,7 +1203,7 @@ msgstr "جاري الإجابة على سؤالك…"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_read_answers"
 msgid "Read &new answers aloud using WinZapp speech settings"
-msgstr "اقرأ الإجابات الجديدة بصوت عالٍ باستخدام إعدادات الكلام في WinZapp"
+msgstr "اقر&أ الإجابات الجديدة بصوت عالٍ باستخدام إعدادات الكلام في WinZapp"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/ai_result_dialog.py
@@ -1220,7 +1220,7 @@ msgstr "تشغيل مرة أخرى (طلب جديد)"
 #: client/ui/dialogs/ai_result_dialog.py
 msgctxt "ai_remember_consent"
 msgid "Remember this consent &for media outside locked chats"
-msgstr "تذكر هذه الموافقة للوسائط خارج الدردشات المقفلة"
+msgstr "&تذكر هذه الموافقة للوسائط خارج الدردشات المقفلة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_reset_confirm"
@@ -1234,7 +1234,7 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_reset_keys"
 msgid "Reset all saved AI &keys"
-msgstr "إعادة تعيين جميع مفاتيح الذكاء الاصطناعي المحفوظة"
+msgstr "إعا&دة تعيين جميع مفاتيح الذكاء الاصطناعي المحفوظة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/ai_result_dialog.py
@@ -1255,18 +1255,18 @@ msgstr "نص PDF يمكن الوصول إليه"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_result_transcription_title"
 msgid "Voice message transcription (online AI)"
-msgstr "تسجيل الرسالة الصوتية (ذكاء اصطناعي عبر الإنترنت)"
+msgstr "تفريغ الرسالة الصوتية (ذكاء اصطناعي عبر الإنترنت)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/ai_result_dialog.py
 msgctxt "ai_send_media"
 msgid "Send &media"
-msgstr "إرسال الوسائط"
+msgstr "&إرسال الوسائط"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_settings_help"
 msgid "&Usage and privacy information"
-msgstr "معلومات الاستخدام والخصوصية"
+msgstr "م&علومات الاستخدام والخصوصية"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_settings_notice"
@@ -1279,7 +1279,7 @@ msgid ""
 "\n"
 "You can review each provider's data terms before sending media. Do not use personal or sensitive media with unpaid Gemini services; paid services have different terms."
 msgstr ""
-"تحوّل التسجيلات النصية والأوصاف الرسائل الصوتية إلى نص، وتصف الصور والملصقات ومقاطع الفيديو، وتجيب عن الأسئلة حولها، وتحول ملفات PDF إلى نص يمكن الوصول إليه. شغّل الميزة، وأضف مفتاح API الخاص بك لموفّر واحد على الأقل، وإذا شئت، ضّبّط الترتيب الذي تُجرّب به الموفّرون. إذا لم يكن لديك مفتاح، استخدم \"احصل على مفتاح API\" في إعدادات الموفّر.\n"
+"يحوّل التفريغ الصوتي والأوصاف الرسائل الصوتية إلى نص، وتصف الصور والملصقات ومقاطع الفيديو، وتجيب عن الأسئلة حولها، وتحول ملفات PDF إلى نص يمكن الوصول إليه. شغّل الميزة، وأضف مفتاح API الخاص بك لموفّر واحد على الأقل، وإذا شئت، ضّبّط الترتيب الذي تُجرّب به الموفّرون. إذا لم يكن لديك مفتاح، استخدم \"احصل على مفتاح API\" في إعدادات الموفّر.\n"
 "\n"
 "عند استخدام إجراء، يُرسل الوسيط المختار إلى أول موفّر في قائمتك يتعامل معه؛ إذا فشل ذلك الموفّر، يُجرّب التالي. للصور ومقاطع الفيديو، تُرسل أسئلتك والإجابات السابقة في هذه النافذة أيضًا. لا تُرسل أسماء الدردشات أو التوضيحات. النتائج إرشادية؛ تحقق من التفاصيل المهمة.\n"
 "\n"
@@ -1290,17 +1290,17 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_show_key"
 msgid "Show or &hide key"
-msgstr "إظهار أو إخفاء المفتاح"
+msgstr "إ&ظهار أو إخفاء المفتاح"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_status_label"
 msgid "S&tatus"
-msgstr "الحالة"
+msgstr "&الحالة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_technical_info"
 msgid "Technical in&formation"
-msgstr "معلومات فنية"
+msgstr "&معلومات فنية"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_technical_notice"
@@ -1309,24 +1309,24 @@ msgid ""
 "\n"
 "OpenAI requests use store=false, which does not guarantee zero retention. For Gemini, unpaid and paid services have different data terms; WinZapp cannot detect billing status from your key. Do not send sensitive or personal media using unpaid Gemini services."
 msgstr ""
-"المفاتيح مشفّرة محليًا بمفتاح محمول منفصل؛ يمكن لأي شخص يمتلك مجلد البيانات بأكمله فك تشفيرها. لا تحفظ هذه الميزة نسخًا إضافية من الوسائط أو سجلات الإجابات: يتم فك تشفير الوسيط في الذاكرة فقط للطلب. قد يؤدي تنزيل الأصل إلى إضافته إلى ذاكرة التخزين المؤقت المشفّرة العادية لواتساب.\n"
+"المفاتيح مشفّرة محليًا بمفتاح محمول منفصل؛ يمكن لأي شخص يمتلك مجلد البيانات بأكمله فك تشفيرها. لا تحفظ هذه الميزة نسخًا إضافية من الوسائط أو سجل الإجابات: يتم فك تشفير الوسيط في الذاكرة فقط للطلب. قد يؤدي تنزيل الأصل إلى إضافته إلى ذاكرة التخزين المؤقت المشفرة العادية لـ WhatsApp.\n"
 "\n"
-"تستخدم طلبات OpenAI store=false، مما لا يضمن عدم الاحتفاظ الصفري. بالنسبة لـ Gemini، الخدمات المدفوعة وغير المدفوعة لها شروط بيانات مختلفة؛ لا يمكن لـ WinZapp اكتشاف حالة الفوترة من مفتاحك. لا ترسل وسائط شخصية أو حساسة باستخدام خدمات Gemini غير المدفوعة."
+"تستخدم طلبات OpenAI المعلمة store=false، والتي لا تضمن عدم الاحتفاظ بالبيانات إطلاقًا. بالنسبة إلى Gemini، تختلف شروط البيانات بين الخدمات المجانية والمدفوعة؛ لا يمكن لـ WinZapp اكتشاف حالة الفوترة من مفتاحك. لا ترسل وسائط حساسة أو شخصية باستخدام خدمات Gemini غير المدفوعة."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_test_connection"
 msgid "Test connection &without sending media"
-msgstr "اختبار الاتصال بدون إرسال وسائط"
+msgstr "ا&ختبار الاتصال بدون إرسال وسائط"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_transcribe_audio_label"
 msgid "Transcribe &voice messages"
-msgstr "تسجيل الرسائل الصوتية"
+msgstr "ت&فريغ الرسائل الصوتية"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_transcribe_audio_menu"
 msgid "Transcribe with online AI"
-msgstr "تسجيل باستخدام الذكاء الاصطناعي عبر الإنترنت"
+msgstr "تفريغ باستخدام الذكاء الاصطناعي عبر الإنترنت"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/ai_result_dialog.py
@@ -1340,7 +1340,7 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "ai_voice_model"
 msgid "&Voice message model"
-msgstr "نموذج الرسائل ال&صوتية"
+msgstr "نم&وذج الرسائل الصوتية"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/conversation_data_dialog.py
@@ -2192,8 +2192,8 @@ msgid ""
 "Bulk transcription cancelled: {done} transcribed, {skipped} skipped, "
 "{failed} with errors."
 msgstr ""
-"تم إلغاء التسجيل النصي الجماعي: {done} تم تسجيله، {skipped} تم تخطيها، "
-"{failed} مع أخطاء."
+"تم إلغاء التفريغ الجماعي: {done} تم تفريغه، {skipped} تم تخطيها، {failed} مع"
+" أخطاء."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/bulk_transcription.py
@@ -2204,8 +2204,8 @@ msgid ""
 "{already}. Skipped because they have nothing to transcribe: {skipped}. "
 "Start?"
 msgstr ""
-"الرسائل المراد تسجيلها نصيًا، واحدة تلو الأخرى: {count}. تم تسجيلها بالفعل: "
-"{already}. تم تخطيها لأنها لا تحتوي على ما يُسجل: {skipped}. بدء؟"
+"الرسائل المراد تفريغها، واحدة تلو الأخرى: {count}. تم تفريغها بالفعل: "
+"{already}. تم تخطيها لأنها لا تحتوي على ما يُفرّغ: {skipped}. بدء؟"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -2214,8 +2214,8 @@ msgid ""
 "Bulk transcription finished: {done} transcribed, {skipped} skipped, {failed}"
 " with errors."
 msgstr ""
-"انتهى التسجيل النصي الجماعي: {done} تم تسجيله، {skipped} تم تخطيها، {failed}"
-" مع أخطاء."
+"انتهى التفريغ الجماعي: {done} تم تفريغه، {skipped} تم تخطيها، {failed} مع "
+"أخطاء."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/bulk_transcription.py
@@ -2224,7 +2224,7 @@ msgid ""
 "None of the selected messages is a voice message, audio or video that can be"
 " transcribed."
 msgstr ""
-"لا أحد من الرسائل المحددة هو رسالة صوتية أو صوت أو فيديو يمكن تسجيله نصيًا."
+"لا توجد أي من الرسائل المحددة كرسالة صوتية أو صوت أو فيديو يمكن تفريغه."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/bulk_transcription.py
@@ -2257,7 +2257,7 @@ msgstr ""
 #, python-brace-format
 msgctxt "bulk_transcription_progress"
 msgid "Transcribing message {index} of {total}."
-msgstr "جاري تسجيل الرسالة {index} من {total} نصيًا."
+msgstr "جاري تفريغ الرسالة {index} من {total}."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "bulk_transcription_show_menu"
@@ -2274,7 +2274,7 @@ msgstr "توقف التسجيل النصي الجماعي لأن الدردشة 
 #: client/ui/conversation_panel/bulk_transcription.py
 msgctxt "bulk_transcription_title"
 msgid "Transcribe selected messages"
-msgstr "تسجيل الرسائل المحددة نصيًا"
+msgstr "تفريغ الرسائل المحددة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/bulk_transcription.py
@@ -2631,7 +2631,7 @@ msgstr "إعدادات فيديو المكالمة"
 #: client/ui/dialogs/status_audience_dialog.py client/updater.py
 msgctxt "cancel"
 msgid "&Cancel"
-msgstr "إلغاء"
+msgstr "إ&لغاء"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/conversations.py
 msgctxt "cancel_edit"
@@ -3376,7 +3376,7 @@ msgstr "مسح الدردشات المحددة"
 #: client/ui/dialogs/transcription_result.py client/ui/media_viewer.py
 msgctxt "close"
 msgid "&Close"
-msgstr "إغلاق"
+msgstr "إغ&لاق"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/chat_menu.py
@@ -3393,17 +3393,17 @@ msgstr "أدوات الأعمال"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_add"
 msgid "&Add to cart..."
-msgstr "إضافة إلى سلة التسوق…"
+msgstr "&إضافة إلى سلة التسوق…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_change"
 msgid "Change &quantity..."
-msgstr "تغيير الكمية…"
+msgstr "&تغيير الكمية…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_clear"
 msgid "&Empty cart"
-msgstr "تفريغ السلة"
+msgstr "ت&فريغ السلة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_clear_confirm"
@@ -3425,22 +3425,22 @@ msgstr "السلة فارغة."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_list"
 msgid "Car&t"
-msgstr "السلة"
+msgstr "ال&سلة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_note"
 msgid "&Message to the business (optional)"
-msgstr "رسالة للعمل (اختياري)"
+msgstr "&رسالة للعمل (اختياري)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_remove"
 msgid "&Remove from cart"
-msgstr "إزالة من السلة"
+msgstr "إ&زالة من السلة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_cart_send"
 msgid "&Send order"
-msgstr "إرسال الطلب"
+msgstr "إرسال ال&طلب"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/cart_dialog.py
 #, python-brace-format
@@ -3517,12 +3517,12 @@ msgstr "المجموع المقدر {amount}"
 #: client/ui/dialogs/order_create_dialog.py
 msgctxt "commerce_item_add"
 msgid "&Add item"
-msgstr "إضافة عنصر"
+msgstr "&إضافة عنصر"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_item_name"
 msgid "&Name"
-msgstr "الاسم"
+msgstr "الا&سم"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_item_name_required"
@@ -3532,7 +3532,7 @@ msgstr "اكتب اسم العنصر."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_item_price"
 msgid "Unit &price"
-msgstr "سعر الوحدة"
+msgstr "سعر ال&وحدة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_item_price_invalid"
@@ -3542,7 +3542,7 @@ msgstr "اكتب سعرًا أكبر من صفر، مثل 12.50."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_item_quantity"
 msgid "&Quantity"
-msgstr "الكمية"
+msgstr "ال&كمية"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/order_create_dialog.py
@@ -3564,7 +3564,7 @@ msgstr "عنصر واحد"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_new_order_add"
 msgid "&Add item..."
-msgstr "إضافة عنصر…"
+msgstr "&إضافة عنصر…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/order_create_dialog.py
@@ -3582,17 +3582,17 @@ msgstr "الطلب لا يحتوي على عناصر بعد."
 #: client/ui/dialogs/order_create_dialog.py
 msgctxt "commerce_new_order_items"
 msgid "&Items of the new order"
-msgstr "عناصر الطلب الجديد"
+msgstr "&عناصر الطلب الجديد"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_new_order_remove"
 msgid "&Remove item"
-msgstr "إزالة عنصر"
+msgstr "إ&زالة عنصر"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_new_order_send"
 msgid "&Send order"
-msgstr "إرسال الطلب"
+msgstr "إرسال ال&طلب"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_new_order_sent"
@@ -3626,7 +3626,7 @@ msgstr "فقط حساب واتساب للأعمال يمكنه الرد على �
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_accept"
 msgid "&Accept order"
-msgstr "قبول الطلب"
+msgstr "&قبول الطلب"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_accepted"
@@ -3709,7 +3709,7 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_decline"
 msgid "D&ecline order..."
-msgstr "رفض الطلب…"
+msgstr "&رفض الطلب…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_decline_note"
@@ -3727,7 +3727,7 @@ msgstr "تم رفض الطلب."
 #: client/ui/dialogs/order_update_dialog.py
 msgctxt "commerce_order_details"
 msgid "&Details"
-msgstr "التفاصيل"
+msgstr "ال&تفاصيل"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_info_confirmed"
@@ -3738,7 +3738,7 @@ msgstr "تم تأكيد معلومات الطلب"
 #: client/ui/dialogs/order_update_dialog.py
 msgctxt "commerce_order_items"
 msgid "&Items of the order"
-msgstr "عناصر الطلب"
+msgstr "&عناصر الطلب"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/order_dialog.py
 #, python-brace-format
@@ -3831,7 +3831,7 @@ msgstr "تحديث الطلب"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_order_update_status"
 msgid "&Update status..."
-msgstr "تحديث الحالة…"
+msgstr "ت&حديث الحالة…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/core/commerce.py
 msgctxt "commerce_out_of_stock"
@@ -3883,7 +3883,7 @@ msgstr "المنتجات: {count}."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_products_list"
 msgid "&Products in the catalog"
-msgstr "المنتجات في الكتالوج"
+msgstr "ال&منتجات في الكتالوج"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_quantity_label"
@@ -3904,7 +3904,7 @@ msgstr "الكمية"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_refresh"
 msgid "Re&fresh"
-msgstr "تحديث"
+msgstr "تح&ديث"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "commerce_status_canceled"
@@ -4767,8 +4767,8 @@ msgid ""
 "Transcribe the voice messages, audio and videos received in this "
 "conversation automatically, locally with Whisper"
 msgstr ""
-"تسجيل الرسائل الصوتية والصوت ومقاطع الفيديو المستلمة في هذه المحادثة "
-"تلقائيًا، محليًا باستخدام Whisper"
+"تفريغ الرسائل الصوتية والمقاطع الصوتية ومقاطع الفيديو المستلمة في هذه "
+"المحادثة تلقائيًا، محليًا باستخدام Whisper"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/conversation_data_dialog.py
@@ -4777,8 +4777,8 @@ msgid ""
 "Transcribe the voice messages and audio received in this conversation "
 "automatically, with the online providers"
 msgstr ""
-"تسجيل الرسائل الصوتية والصوت المستلمة في هذه المحادثة تلقائيًا، باستخدام "
-"الموفّرين عبر الإنترنت"
+"تفريغ الرسائل الصوتية والمقاطع الصوتية المستلمة في هذه المحادثة تلقائيًا، "
+"عبر موفري الخدمة على الإنترنت"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/archived_panel.py
@@ -6359,7 +6359,7 @@ msgstr "لم يمكن الرد على الطلب: رفض واتساب أو فش�
 #: client/ui/dialogs/group_membership_requests.py
 msgctxt "group_requests_list"
 msgid "&Pending requests"
-msgstr "الطلبات المعلقة"
+msgstr "ال&طلبات المعلقة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/group_membership_requests.py
@@ -13389,7 +13389,7 @@ msgstr "النماذج في مجلدات أخرى"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_external_add_btn"
 msgid "A&dd..."
-msgstr "إضافة…"
+msgstr "&إضافة…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -13438,7 +13438,7 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_external_check_btn"
 msgid "Verif&y"
-msgstr "تحقق"
+msgstr "&تحقق"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -13523,7 +13523,7 @@ msgstr "نماذج whisper.cpp (*.bin)|*.bin|جميع الملفات (*.*)|*.*"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_external_find_btn"
 msgid "Fi&nd..."
-msgstr "بحث…"
+msgstr "&بحث…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -13546,7 +13546,7 @@ msgstr "جاري البحث في ذاكرة التخزين المؤقت لـ Hug
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_external_forget_btn"
 msgid "&Forget"
-msgstr "نسيان"
+msgstr "&نسيان"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -13823,7 +13823,7 @@ msgstr "غير مؤكد"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_external_use_btn"
 msgid "&Use"
-msgstr "استخدام"
+msgstr "&استخدام"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -14275,14 +14275,14 @@ msgid ""
 "This transcription was not saved, because the message has not been sent yet."
 " Once it is sent, transcribe it again to save it."
 msgstr ""
-"لم يتم حفظ هذا التسجيل النصي، لأن الرسالة لم تُرسل بعد. بمجرد إرسالها، "
-"سجّلها نصيًا مرة أخرى لحفظها."
+"لم يتم حفظ هذا التفريغ، لأن الرسالة لم تُرسل بعد. بمجرد إرسالها، قم بتفريغها"
+" مرة أخرى لحفظها."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
 msgctxt "transcription_note_language_differs"
 msgid "This message was transcribed in {language}."
-msgstr "تم تسجيل هذه الرسالة نصيًا في {language}."
+msgstr "تم تفريغ هذه الرسالة بـ {language}."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -14340,7 +14340,7 @@ msgid ""
 "The voice filter could not be used for this transcription, so it may not be "
 "reliable."
 msgstr ""
-"لم يمكن استخدام عامل تصفية الصوت لهذا التسجيل النصي، لذا قد لا يكون موثوقًا."
+"لم يمكن استخدام عامل تصفية الصوت لهذا التفريغ، لذا قد لا يكون موثوقًا."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_notice_language_forced"
@@ -14378,8 +14378,8 @@ msgid ""
 "Turning this on turns off the automatic transcription with the local models "
 "(Transcription tab), so a voice message is not transcribed twice. Continue?"
 msgstr ""
-"تشغيل هذا يوقف التسجيل النصي التلقائي مع النماذج المحلية (تبويب التسجيل "
-"النصي)، لذا لا تُسجل الرسالة الصوتية مرتين. المتابعة؟"
+"تشغيل هذا يوقف التفريغ التلقائي مع النماذج المحلية (تبويب التفريغ)، لذا لا "
+"تُفرّغ الرسالة الصوتية مرتين. المتابعة؟"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/transcription_flow.py
 msgctxt "transcription_open_settings_question"
@@ -14409,7 +14409,7 @@ msgstr "جاري تحضير الصوت…"
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_phase_transcribing"
 msgid "Transcribing the message..."
-msgstr "جاري تسجيل الرسالة نصياً…"
+msgstr "جاري تفريغ الرسالة…"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_precision_bfloat16"
@@ -14657,8 +14657,7 @@ msgid ""
 "The graphics card could not be used. Do you want to transcribe again using "
 "the processor?"
 msgstr ""
-"لم يمكن استخدام بطاقة الرسومات. هل تريد التسجيل النصي مرة أخرى باستخدام "
-"المعالج؟"
+"لم يمكن استخدام بطاقة الرسوميات. هل تريد التفريغ مرة أخرى باستخدام المعالج؟"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_retry_on_cpu_precision"
@@ -14666,8 +14665,8 @@ msgid ""
 "The graphics card could not use the chosen calculation precision. Do you "
 "want to transcribe again using the processor?"
 msgstr ""
-"لم يمكن لبطاقة الرسومات استخدام دقة الحساب المختارة. هل تريد التسجيل النصي "
-"مرة أخرى باستخدام المعالج؟"
+"لم يمكن لبطاقة الرسوميات استخدام دقة الحساب المختارة. هل تريد التفريغ مرة "
+"أخرى باستخدام المعالج؟"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_retry_on_cpu_vram"
@@ -14675,8 +14674,8 @@ msgid ""
 "The graphics card did not have enough memory. Do you want to transcribe "
 "again using the processor?"
 msgstr ""
-"لم تكن بطاقة الرسومات لديها ذاكرة كافية. هل تريد التسجيل النصي مرة أخرى "
-"باستخدام المعالج؟"
+"لم تكن لدى بطاقة الرسوميات ذاكرة كافية. هل تريد التفريغ مرة أخرى باستخدام "
+"المعالج؟"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_reuse_browse_cuda"
@@ -14889,8 +14888,8 @@ msgid ""
 "&Automatically transcribe received audio and video statuses locally and put "
 "the text in the status line"
 msgstr ""
-"تسجيل الحالات الصوتية ومقاطع الفيديو المستلمة نصيًا تلقائيًا محليًا ووضع "
-"النص في سطر الحالة"
+"&تفريغ الحالات الصوتية ومقاطع الفيديو المستلمة تلقائيًا محليًا ووضع النص في "
+"سطر الحالة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/transcription_options.py
@@ -14997,7 +14996,7 @@ msgstr ""
 #: client/ui/conversation_panel/message_menu.py
 msgctxt "transcription_transcribe_again"
 msgid "Transcribe again"
-msgstr "تسجيل نصي مرة أخرى"
+msgstr "تفريغ مرة أخرى"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/transcription_tab.py
@@ -16267,7 +16266,7 @@ msgstr ""
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_add"
 msgid "&Add chats"
-msgstr "إضافة دردشات"
+msgstr "&إضافة دردشات"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/chat_lists.py
@@ -16304,17 +16303,17 @@ msgstr "تم حفظ التغيير."
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_close"
 msgid "&Close"
-msgstr "إغلاق"
+msgstr "إغ&لاق"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_create"
 msgid "Cr&eate list"
-msgstr "إنشاء قائمة"
+msgstr "إ&نشاء قائمة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_delete"
 msgid "&Delete list"
-msgstr "حذف القائمة"
+msgstr "&حذف القائمة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 #, python-brace-format
@@ -16351,7 +16350,7 @@ msgstr "جاري تحميل قوائم واتساب…"
 #: client/ui/conversation_panel/chat_lists.py client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_manage"
 msgid "Mana&ge WhatsApp lists"
-msgstr "إدارة قوائم واتساب"
+msgstr "إ&دارة قوائم واتساب"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_name"
@@ -16397,17 +16396,17 @@ msgstr "لم يقبل واتساب هذا التغيير."
 #: client/ui/conversation_panel/chat_lists.py client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_reload"
 msgid "Refre&sh lists"
-msgstr "تحديث القوائم"
+msgstr "&تحديث القوائم"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_remove"
 msgid "Re&move chats"
-msgstr "إزالة الدردشات"
+msgstr "إ&زالة الدردشات"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_rename"
 msgid "Re&name list"
-msgstr "إعادة تسمية القائمة"
+msgstr "إ&عادة تسمية القائمة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/chat_lists.py

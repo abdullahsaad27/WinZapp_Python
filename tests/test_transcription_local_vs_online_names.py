@@ -20,6 +20,7 @@ LOCALES = list(registered_locale_codes())
 #: Per locale, lower-case words that mark the local and the online feature.
 #: Taken from the words each file already uses for "local" and "online".
 MARKERS = {
+    "ar": (("محلي", "المحلي", "محليًا"), ("عبر الإنترنت",)),
     "pt-BR": (("local",), ("ia online",)),
     "pt-PT": (("local",), ("ia online",)),
     "en-US": (("local",), ("online ai",)),

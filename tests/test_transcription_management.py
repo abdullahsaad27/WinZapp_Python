@@ -1389,6 +1389,7 @@ class TestAnnouncement:
     #: both "setări" and "configurare". Keyed by locale for the same reason as
     #: _DOWNLOAD_WORD below.
     _SETTINGS_WORDS = {
+        "ar": ("إعدادات", "إعداد"),
         "pt-BR": ("configura",), "pt-PT": ("definições", "configura"),
         "en-US": ("settings",), "es-ES": ("configura",), "pl": ("ustawieni",),
         "ro": ("setăr", "configur"), "tr-TR": ("ayar",),
@@ -1410,6 +1411,7 @@ class TestAnnouncement:
     #: against language_map rather than parametrized over a written-out list,
     #: which is what let ro and tr-TR arrive without being checked at all.
     _DOWNLOAD_WORD = {
+        "ar": "تنزيل",
         "pt-BR": "baixad", "pt-PT": "transferid", "en-US": "download",
         "es-ES": "descargad", "pl": "pobran", "ro": "descărca", "tr-TR": "indir",
     }
