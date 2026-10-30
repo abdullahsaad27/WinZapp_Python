@@ -480,7 +480,9 @@ msgstr "بدء واجهة برمجة التطبيقات المحلية على &�
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
 msgctxt "advanced_fixed_port_label"
 msgid "Local API &port (applies the next time WinZapp starts):"
-msgstr "منفذ واجهة برمجة ال&تطبيقات المحلية (يسري في المرة القادمة التي يبدأ فيها WinZapp):"
+msgstr ""
+"منفذ واجهة برمجة ال&تطبيقات المحلية (يسري في المرة القادمة التي يبدأ فيها "
+"WinZapp):"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "advanced_log_level_debug"
@@ -945,7 +947,9 @@ msgctxt "ai_hide_action_button"
 msgid ""
 "&Hide the online AI button after the message list (the message menu still "
 "offers it)"
-msgstr "إخفاء زر الذكاء الاصطناعي عب&ر الإنترنت بعد قائمة الرسائل (القائمة الخاصة بالرسالة لا تزال تقدمه)"
+msgstr ""
+"إخفاء زر الذكاء الاصطناعي عب&ر الإنترنت بعد قائمة الرسائل (القائمة الخاصة "
+"بالرسالة لا تزال تقدمه)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/ai_result_dialog.py
@@ -2028,7 +2032,9 @@ msgid ""
 "&Download updates and transcription downloads in the background, without the"
 " progress window (WinZapp tells you before installing an update and when a "
 "download finishes)"
-msgstr "تنزيل التحديثات وتنزيلات التسجيل النصي &في الخلفية، بدون نافذة التقدم (يقول لك WinZapp قبل تثبيت تحديث وعند انتهاء التنزيل)"
+msgstr ""
+"تنزيل التحديثات وتنزيلات التسجيل النصي &في الخلفية، بدون نافذة التقدم (يقول "
+"لك WinZapp قبل تثبيت تحديث وعند انتهاء التنزيل)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #, python-brace-format
@@ -8732,7 +8738,9 @@ msgctxt "probe_video_duration_on_download_label"
 msgid ""
 "Find &the length of videos that state none as soon as they download (instead"
 " of only on playback)"
-msgstr "ابحث عن طول مقاطع ال&فيديو التي تشير إلى عدم وجود بمجرد تنزيلها (بدلاً من التشغيل فقط)"
+msgstr ""
+"ابحث عن طول مقاطع ال&فيديو التي تشير إلى عدم وجود بمجرد تنزيلها (بدلاً من "
+"التشغيل فقط)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/settings_dialog.py
@@ -8740,7 +8748,9 @@ msgctxt "profile_backup_close_hours_label"
 msgid ""
 "&Minimum time between profile backups taken when closing WinZapp (hours, 0 ="
 " on every close)"
-msgstr "ال&حد الأدنى للوقت بين نسخ الملف الشخصي الاحتياطية عند إغلاق WinZapp (ساعات، 0 = في كل إغلاق)"
+msgstr ""
+"ال&حد الأدنى للوقت بين نسخ الملف الشخصي الاحتياطية عند إغلاق WinZapp (ساعات،"
+" 0 = في كل إغلاق)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/main_window/session_lifecycle.py
@@ -8776,7 +8786,9 @@ msgctxt "profile_backup_disabled_label"
 msgid ""
 "&Don't keep profile backups (saves space, but if the profile is damaged you "
 "will need to pair again)"
-msgstr "&عدم الاحتفاظ بنسخ الملف الشخصي الاحتياطية (توفير مساحة، ولكن إذا تتلف الملف الشخصي ستحتاج إلى الاقتران مرة أخرى)"
+msgstr ""
+"&عدم الاحتفاظ بنسخ الملف الشخصي الاحتياطية (توفير مساحة، ولكن إذا تتلف الملف"
+" الشخصي ستحتاج إلى الاقتران مرة أخرى)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "profile_backup_live_confirm"
@@ -8830,7 +8842,9 @@ msgctxt "profile_backup_live_label"
 msgid ""
 "Also &back up the profile while WinZapp is open (WhatsApp is disconnected "
 "while the backup runs)"
-msgstr "&أيضًا نسخ الملف الشخصي احتياطيًا أثناء فتح WinZapp (يتم فصل واتساب أثناء تشغيل النسخة الاحتياطية)"
+msgstr ""
+"&أيضًا نسخ الملف الشخصي احتياطيًا أثناء فتح WinZapp (يتم فصل واتساب أثناء "
+"تشغيل النسخة الاحتياطية)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/main_window/session_lifecycle.py
@@ -9069,6 +9083,58 @@ msgctxt "quick_audio_output_title"
 msgid "Playback device"
 msgstr "جهاز التشغيل"
 
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/conversation_panel/chat_menu.py
+#, python-brace-format
+msgctxt "quick_chat_assign_menu"
+msgid "Assign this chat to number {digit}"
+msgstr "تعيين هذه الدردشة للرقم {digit}"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+msgctxt "quick_chat_assign_shortcut"
+msgid "Assign the focused chat to a quick number"
+msgstr "تعيين الدردشة المحددة لرقم سريع"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_assigned"
+msgid "Quick chat {digit} assigned to {name}."
+msgstr "تم تعيين الدردشة السريعة {digit} إلى {name}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_empty"
+msgid "No chat is assigned to quick number {digit}."
+msgstr "لا توجد دردشة معيّنة للرقم السريع {digit}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+msgctxt "quick_chat_no_focus"
+msgid ""
+"Focus a chat in a chat list or open a chat before assigning a quick number."
+msgstr "حدّد دردشة في قائمة الدردشات أو افتح دردشة قبل تعيين رقم سريع."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+msgctxt "quick_chat_open_shortcut"
+msgid "Open an assigned quick chat"
+msgstr "فتح دردشة سريعة معيّنة"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+msgctxt "quick_chat_protected"
+msgid "Protected chats cannot be assigned to quick numbers."
+msgstr "لا يمكن تعيين الدردشات المحمية لأرقام سريعة."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_unavailable"
+msgid "Quick chat {digit} is unavailable."
+msgstr "الدردشة السريعة {digit} غير متاحة."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/conversation_panel/chat_menu.py
+msgctxt "quick_chats_menu"
+msgid "Quick chats"
+msgstr "الدردشات السريعة"
+
 #: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/settings.py
 msgctxt "quick_tip_message"
 msgid "To see keyboard shortcuts at any time, press f1."
@@ -9155,7 +9221,9 @@ msgctxt "reactions_fixed_label"
 msgid ""
 "&Use fixed quick reactions: choose the emoji for each of the 12 positions "
 "instead of sorting by most used"
-msgstr "استخدام &ردود فعل سريعة ثابتة: اختر الرمز التعبيري لكل من المراكز الـ 12 بدلاً من الترتيب حسب الأكثر استخدامًا"
+msgstr ""
+"استخدام &ردود فعل سريعة ثابتة: اختر الرمز التعبيري لكل من المراكز الـ 12 "
+"بدلاً من الترتيب حسب الأكثر استخدامًا"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/message_list.py
@@ -9219,7 +9287,9 @@ msgctxt "reactions_slots_label"
 msgid ""
 "&Quick reaction positions. Press Enter on a position to choose its emoji; if"
 " that emoji is already in another position, the two swap places."
-msgstr "&مواقع رد الفعل السريع. اضغط Enter على مركز لاختيار رمزه التعبيري؛ إذا كان هذا الرمز التعبيري بالفعل في مركز آخر، فإن الاثنين يتبادلان المكانين."
+msgstr ""
+"&مواقع رد الفعل السريع. اضغط Enter على مركز لاختيار رمزه التعبيري؛ إذا كان "
+"هذا الرمز التعبيري بالفعل في مركز آخر، فإن الاثنين يتبادلان المكانين."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/conversations.py
 msgctxt "read_more_button"
@@ -10907,6 +10977,20 @@ msgid "Previous emoji skin tone"
 msgstr "درجة لون الرمز التعبيري السابقة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_dialog.py
+msgctxt "shortcut_quick_chat_assign_label"
+msgid ""
+"Ctrl+Alt+Shift+F1 to Ctrl+Alt+Shift+F10: assign the focused chat to quick "
+"chat 1 to 9 and 0"
+msgstr "Ctrl+Alt+Shift+F1 إلى Ctrl+Alt+Shift+F10: تعيين الدردشة المحددة للدردشة السريعة من 1 إلى 9 و0"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_dialog.py
+msgctxt "shortcut_quick_chat_open_label"
+msgid "Ctrl+Shift+F1 to Ctrl+Shift+F10: open quick chat 1 to 9 and 0"
+msgstr "Ctrl+Shift+F1 إلى Ctrl+Shift+F10: فتح الدردشة السريعة من 1 إلى 9 و0"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "shortcut_remove"
 msgid "Remove &shortcut"
 msgstr "إزالة اخت&صار"
@@ -12591,7 +12675,9 @@ msgctxt "transcription_auto_transcribe_check"
 msgid ""
 "Automatically transcribe received voice &messages and videos and put the "
 "text in the message line"
-msgstr "تسجيل ال&رسائل الصوتية ومقاطع الفيديو المستلمة تلقائيًا ووضع النص في سطر الرسالة"
+msgstr ""
+"تسجيل ال&رسائل الصوتية ومقاطع الفيديو المستلمة تلقائيًا ووضع النص في سطر "
+"الرسالة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "transcription_backend_faster_whisper"
@@ -14224,7 +14310,9 @@ msgctxt "transcription_no_dialog_check"
 msgid ""
 "&Transcribe without the progress window: stay on the messages or statuses "
 "until the text is ready (the same shortcut cancels)"
-msgstr "&تسجيل نصي بدون نافذة التقدم: ابق على الرسائل أو الحالات حتى يكون النص جاهزًا (نفس الاختصار يلغي)"
+msgstr ""
+"&تسجيل نصي بدون نافذة التقدم: ابق على الرسائل أو الحالات حتى يكون النص "
+"جاهزًا (نفس الاختصار يلغي)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/status_tab/my_status_transcription.py
@@ -14866,7 +14954,9 @@ msgctxt "transcription_status_auto_check"
 msgid ""
 "&Automatically transcribe received audio and video statuses locally and put "
 "the text in the status line"
-msgstr "&تسجيل الحالات الصوتية ومقاطع الفيديو المستلمة نصيًا تلقائيًا محليًا ووضع النص في سطر الحالة"
+msgstr ""
+"&تسجيل الحالات الصوتية ومقاطع الفيديو المستلمة نصيًا تلقائيًا محليًا ووضع "
+"النص في سطر الحالة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/transcription_options.py
@@ -14874,7 +14964,9 @@ msgctxt "transcription_status_cache_check"
 msgid ""
 "&Save local transcriptions of statuses with them so they are not redone "
 "(cache; deleted together with the status)"
-msgstr "&حفظ التسجيلات النصية المحلية للحالات معها حتى لا تُعاد (ذاكرة مؤقتة؛ تُحذف مع الحالة)"
+msgstr ""
+"&حفظ التسجيلات النصية المحلية للحالات معها حتى لا تُعاد (ذاكرة مؤقتة؛ تُحذف "
+"مع الحالة)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/transcription_options.py
@@ -14904,7 +14996,9 @@ msgctxt "transcription_status_enter_check"
 msgid ""
 "&Enter and Space transcribe audio and video statuses locally into the status"
 " line (Alt+Shift+N then opens or plays them)"
-msgstr "Enter و Space تُسجل ال&صوت والفيديو للحالات نصيًا محليًا في سطر الحالة (Alt+Shift+N ثم تفتحها أو تشغّلها)"
+msgstr ""
+"Enter و Space تُسجل ال&صوت والفيديو للحالات نصيًا محليًا في سطر الحالة "
+"(Alt+Shift+N ثم تفتحها أو تشغّلها)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/transcription_windows.py
@@ -15214,7 +15308,10 @@ msgid ""
 "&Enter and Space on a voice message or video transcribe it into its line in "
 "the list instead of playing it (Alt+Shift+N plays or opens it); turned off, "
 "Enter and Space play or open it and Alt+Shift+N transcribes it into its line"
-msgstr "Enter و Space &على رسالة صوتية أو فيديو تسجلها نصيًا في سطرها في القائمة بدلاً من تشغيلها (Alt+Shift+N يشغلها أو يفتحها)؛ عند الإيقاف، Enter و Space يشغلانها أو يفتحانها و Alt+Shift+N يسجلها نصيًا في سطرها"
+msgstr ""
+"Enter و Space &على رسالة صوتية أو فيديو تسجلها نصيًا في سطرها في القائمة "
+"بدلاً من تشغيلها (Alt+Shift+N يشغلها أو يفتحها)؛ عند الإيقاف، Enter و Space "
+"يشغلانها أو يفتحانها و Alt+Shift+N يسجلها نصيًا في سطرها"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/settings_dialog.py
@@ -15222,7 +15319,9 @@ msgctxt "ui_escape_clears_selection"
 msgid ""
 "&Esc deselects the selected messages before closing the chat, and the "
 "selected chats in a list of chats"
-msgstr "Esc &يلغي تحديد الرسائل المحددة قبل إغلاق الدردشة، والدردشات المحددة في قائمة الدردشات"
+msgstr ""
+"Esc &يلغي تحديد الرسائل المحددة قبل إغلاق الدردشة، والدردشات المحددة في "
+"قائمة الدردشات"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/settings_dialog.py
@@ -15248,7 +15347,9 @@ msgctxt "ui_forward_voice_as_voice"
 msgid ""
 "Forward &voice messages as voice messages instead of audio (they are still "
 "marked as forwarded)"
-msgstr "إعا&دة توجيه الرسائل الصوتية كرسائل صوتية بدلاً من صوت (تظل مميزة كمعاد توجيهها)"
+msgstr ""
+"إعا&دة توجيه الرسائل الصوتية كرسائل صوتية بدلاً من صوت (تظل مميزة كمعاد "
+"توجيهها)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/settings_dialog.py
@@ -15300,7 +15401,9 @@ msgctxt "ui_keep_search_after_open"
 msgid ""
 "&Keep the chat search when opening a chat, so Esc returns to the results "
 "instead of the full list"
-msgstr "الإبقاء &على بحث الدردشة عند فتح دردشة، zodat Esc يعود إلى النتائج بدلاً من القائمة الكاملة"
+msgstr ""
+"الإبقاء &على بحث الدردشة عند فتح دردشة، zodat Esc يعود إلى النتائج بدلاً من "
+"القائمة الكاملة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/settings_dialog.py
@@ -15308,7 +15411,9 @@ msgctxt "ui_mark_unsaved_contacts"
 msgid ""
 "Precede &names of unsaved contacts with a tilde (~) in conversations and "
 "messages"
-msgstr "&تقديم أسماء جهات الاتصال غير المحفوظة بعلامة tilde (~) في المحادثات والرسائل"
+msgstr ""
+"&تقديم أسماء جهات الاتصال غير المحفوظة بعلامة tilde (~) في المحادثات "
+"والرسائل"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/settings_dialog.py
@@ -15352,7 +15457,8 @@ msgctxt "ui_message_list_mode_listbox"
 msgid ""
 "List box (&full messages, screen reader does not announce position or item "
 "count)"
-msgstr "صندوق قائمة (الرسائل الكاملة، لا يعلن قارئ الشاش&ة عن الموضع أو عدد العناصر)"
+msgstr ""
+"صندوق قائمة (الرسائل الكاملة، لا يعلن قارئ الشاش&ة عن الموضع أو عدد العناصر)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/settings_dialog.py
@@ -15470,7 +15576,9 @@ msgctxt "ui_show_listbox_item_count"
 msgid ""
 "&Display item position and count when using List box mode (Only applies when"
 " List box mode is selected)"
-msgstr "إظهار موضع العنصر وعدد العناصر عند استخدام وضع صندوق ال&قائمة (ينطبق فقط عندما يكون وضع صندوق القائمة محددًا)"
+msgstr ""
+"إظهار موضع العنصر وعدد العناصر عند استخدام وضع صندوق ال&قائمة (ينطبق فقط "
+"عندما يكون وضع صندوق القائمة محددًا)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/settings_dialog.py
