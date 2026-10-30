@@ -16042,7 +16042,7 @@ msgstr "لم يقبل واتساب هذا التغيير."
 #: client/ui/conversation_panel/chat_lists.py client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_reload"
 msgid "Refre&sh lists"
-msgstr "&تحديث القوائم"
+msgstr "تحديث ال&قوائم"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/chat_lists.py
 msgctxt "wa_lists_remove"
