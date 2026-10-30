@@ -4,6 +4,8 @@ Esta versión trae las comunidades y una ventana de configuración reorganizada,
 
 NOVEDADES
 
+- Al aceptar una actualización, WinZapp ahora vuelve a comprobar cuál es la versión más reciente antes de descargar, de modo que ya no instala una alfa anterior a la última cuando se publican alfas seguidas.
+
 - Llamadas con Neonize: corregida una condición de carrera que podía dejar sin audio una llamada entrante al responder, conservadas las tramas múltiples recibidas y reducido el aliasing al convertir el micrófono. El audio utiliza ahora el códec negociado, con reordenación limitada de paquetes y gestión de pérdidas.
 
 - WPPConnect Server actualizado a la 2.10.71, que añade una corrección para una vulnerabilidad en una biblioteca que usa la capa del navegador (deepmerge) y la carga al iniciar el servidor.
