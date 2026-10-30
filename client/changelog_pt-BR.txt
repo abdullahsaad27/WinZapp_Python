@@ -4,6 +4,10 @@ Esta versão traz as comunidades e uma janela de configurações reorganizada, a
 
 NOVIDADES
 
+- Chats de acesso rápido: Ctrl+Alt+Shift+F1–F10 atribui um chat e Ctrl+Shift+a mesma tecla de função o abre de qualquer lugar da janela (F10 é a posição 0). As atribuições são separadas por conta, os atalhos podem ser alterados nas Configurações e os atalhos dos marcadores são mantidos.
+
+- O árabe agora está disponível em Configurações > Geral > Idioma, com textos em árabe no instalador e no desinstalador do Windows.
+
 - O WPPConnect Server foi atualizado para a 2.10.70, que reforça as rotas de administração (listar e fazer backup das sessões agora exigem a chave secreta em um cabeçalho, e não no endereço), as pastas de sessão que ele apaga ao sair da conta e a forma de separar listas de contatos. A limpeza de sessões ao fechar com uma API personalizada foi adaptada a essa mudança.
 
 - Uma chamada em grupo que tocou e não foi atendida agora fica registrada no grupo, e o aviso da chamada mostra o grupo: ela não aparece mais como uma ligação particular de quem a iniciou.

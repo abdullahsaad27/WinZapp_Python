@@ -9217,6 +9217,60 @@ msgctxt "quick_audio_output_title"
 msgid "Playback device"
 msgstr "Oynatma cihazı"
 
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/conversation_panel/chat_menu.py
+#, python-brace-format
+msgctxt "quick_chat_assign_menu"
+msgid "Assign this chat to number {digit}"
+msgstr "Bu sohbeti {digit} numarasına ata"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+msgctxt "quick_chat_assign_shortcut"
+msgid "Assign the focused chat to a quick number"
+msgstr "Odaklanılan sohbeti hızlı erişim numarasına ata"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_assigned"
+msgid "Quick chat {digit} assigned to {name}."
+msgstr "Hızlı sohbet {digit}, {name} kişisine atandı."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_empty"
+msgid "No chat is assigned to quick number {digit}."
+msgstr "Hızlı erişim numarası {digit} için atanmış bir sohbet yok."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+msgctxt "quick_chat_no_focus"
+msgid ""
+"Focus a chat in a chat list or open a chat before assigning a quick number."
+msgstr ""
+"Hızlı erişim numarası atamadan önce listedeki bir sohbete odaklanın veya bir"
+" sohbet açın."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+msgctxt "quick_chat_open_shortcut"
+msgid "Open an assigned quick chat"
+msgstr "Atanmış hızlı sohbeti aç"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+msgctxt "quick_chat_protected"
+msgid "Protected chats cannot be assigned to quick numbers."
+msgstr "Korumalı sohbetler hızlı erişim numaralarına atanamaz."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_unavailable"
+msgid "Quick chat {digit} is unavailable."
+msgstr "Hızlı sohbet {digit} kullanılamıyor."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/conversation_panel/chat_menu.py
+msgctxt "quick_chats_menu"
+msgid "Quick chats"
+msgstr "Hızlı sohbetler"
+
 #: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/settings.py
 msgctxt "quick_tip_message"
 msgid "To see keyboard shortcuts at any time, press f1."
@@ -11103,6 +11157,22 @@ msgstr "Önceki arama listesi filtresi"
 msgctxt "shortcut_previous_tone"
 msgid "Previous emoji skin tone"
 msgstr "Önceki emoji ten rengi"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_dialog.py
+msgctxt "shortcut_quick_chat_assign_label"
+msgid ""
+"Ctrl+Alt+Shift+F1 to Ctrl+Alt+Shift+F10: assign the focused chat to quick "
+"chat 1 to 9 and 0"
+msgstr ""
+"Ctrl+Alt+Shift+F1 - Ctrl+Alt+Shift+F10: odaklanılan sohbeti 1'den 9'a ve 0 "
+"için hızlı erişime ata"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_dialog.py
+msgctxt "shortcut_quick_chat_open_label"
+msgid "Ctrl+Shift+F1 to Ctrl+Shift+F10: open quick chat 1 to 9 and 0"
+msgstr "Ctrl+Shift+F1 - Ctrl+Shift+F10: 1'den 9'a ve 0 için hızlı sohbeti aç"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "shortcut_remove"

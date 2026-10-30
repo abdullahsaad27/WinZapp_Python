@@ -9318,6 +9318,60 @@ msgctxt "quick_audio_output_title"
 msgid "Playback device"
 msgstr "Dispositivo de reproducción"
 
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/conversation_panel/chat_menu.py
+#, python-brace-format
+msgctxt "quick_chat_assign_menu"
+msgid "Assign this chat to number {digit}"
+msgstr "Asignar este chat al número {digit}"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+msgctxt "quick_chat_assign_shortcut"
+msgid "Assign the focused chat to a quick number"
+msgstr "Asignar el chat con el foco a un número de acceso rápido"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_assigned"
+msgid "Quick chat {digit} assigned to {name}."
+msgstr "Chat de acceso rápido {digit} asignado a {name}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_empty"
+msgid "No chat is assigned to quick number {digit}."
+msgstr "No hay ningún chat asignado al número de acceso rápido {digit}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+msgctxt "quick_chat_no_focus"
+msgid ""
+"Focus a chat in a chat list or open a chat before assigning a quick number."
+msgstr ""
+"Pon el foco en un chat de la lista o abre un chat antes de asignar un número"
+" de acceso rápido."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+msgctxt "quick_chat_open_shortcut"
+msgid "Open an assigned quick chat"
+msgstr "Abrir un chat de acceso rápido asignado"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+msgctxt "quick_chat_protected"
+msgid "Protected chats cannot be assigned to quick numbers."
+msgstr "Los chats protegidos no se pueden asignar a números de acceso rápido."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/quick_chats.py
+#, python-brace-format
+msgctxt "quick_chat_unavailable"
+msgid "Quick chat {digit} is unavailable."
+msgstr "El chat de acceso rápido {digit} no está disponible."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/conversation_panel/chat_menu.py
+msgctxt "quick_chats_menu"
+msgid "Quick chats"
+msgstr "Chats de acceso rápido"
+
 #: translations/en-US/LC_MESSAGES/winzapp.po client/main_window/settings.py
 msgctxt "quick_tip_message"
 msgid "To see keyboard shortcuts at any time, press f1."
@@ -11222,6 +11276,24 @@ msgstr "Filtro anterior de la lista de llamadas"
 msgctxt "shortcut_previous_tone"
 msgid "Previous emoji skin tone"
 msgstr "Tono de piel anterior del emoji"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_dialog.py
+msgctxt "shortcut_quick_chat_assign_label"
+msgid ""
+"Ctrl+Alt+Shift+F1 to Ctrl+Alt+Shift+F10: assign the focused chat to quick "
+"chat 1 to 9 and 0"
+msgstr ""
+"Ctrl+Alt+Shift+F1 a Ctrl+Alt+Shift+F10: asignar el chat con el foco al "
+"acceso rápido del 1 al 9 y el 0"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_dialog.py
+msgctxt "shortcut_quick_chat_open_label"
+msgid "Ctrl+Shift+F1 to Ctrl+Shift+F10: open quick chat 1 to 9 and 0"
+msgstr ""
+"Ctrl+Shift+F1 a Ctrl+Shift+F10: abrir el chat de acceso rápido del 1 al 9 y "
+"el 0"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "shortcut_remove"

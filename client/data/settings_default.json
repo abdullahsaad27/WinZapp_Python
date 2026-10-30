@@ -1,5 +1,6 @@
 {
     "keyboard_shortcuts": {},
+    "quick_chats": {},
     "connection": {
         "wpp_server": "http://127.0.0.1",
         "wpp_port": 6300,

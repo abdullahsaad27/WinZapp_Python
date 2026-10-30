@@ -37,6 +37,17 @@ class ChatMenuMixin:
 
         menu = wx.Menu()
 
+        # Menu and keyboard use the same account-local assignment command.
+        if not mw.is_chat_locked(jid):
+            quick_menu = wx.Menu()
+            for digit in range(10):
+                item = quick_menu.Append(wx.ID_ANY,
+                    i18n.t("quick_chat_assign_menu").format(digit=digit))
+                self.Bind(wx.EVT_MENU,
+                    lambda e, d=digit, c=chat: mw._assign_quick_chat(d, c), item)
+            menu.AppendSubMenu(quick_menu, i18n.t("quick_chats_menu"))
+            menu.AppendSeparator()
+
         if getattr(self, "selected_chats", None):
             # Each entry carries its own dedicated shortcut (see
             # create_accelerator_table's ID_BULK_*_CHATS) — those work
