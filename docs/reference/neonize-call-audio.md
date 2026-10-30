@@ -14,6 +14,12 @@ call's microphone. A reader returning after end/rejoin cannot emit its old PCM
 or release the replacement reader's claim. Microphone FIR history and partial
 frames belong to one call record and are cleared on ownership changes.
 
+A reentrant lifecycle gate orders model transitions, terminal events, PCM
+emissions and microphone writes. Native audio reads stay outside that gate;
+returning PCM is rechecked inside it. Terminal removal precedes emission, so
+a callback rejoining the same ID cannot have its replacement removed. No model
+mutex is held across the transport callback.
+
 ## PCM and clocks
 
 `call_audio_pcm.py` uses a 97-tap streaming Blackman FIR before 3:1 decimation
@@ -37,6 +43,14 @@ to `v0.1.1-0.20261026214112-e7b8aa55508c` (MIT); no new native codec DLL is
 installed. Opus RTP timestamps advance at 48 kHz (2880 per 60 ms), while MLow
 uses 16 kHz. Receive timestamps are converted by accumulated deltas, including
 uint32 wrap and fractional carry. Reception statistics retain the wire clock.
+
+Both media directions read the authoritative settings at packet boundaries
+under one codec mutex. Late accept settings therefore replace encoder and
+per-participant decoder/reorder state and change the RTP stride together,
+without replacing SRTP keys, sequence or ROC. There is no startup-hook window
+that can lose an update. Old decoded PCM remains valid PCM; the direct playout
+buffer resets when the new timestamp origin arrives. Authentication diagnostics
+describe each wire arrival once; concealed PCM is labelled separately.
 
 Only SRTP-authenticated packets enter a per-participant bounded reorder queue.
 Late/duplicate packets never reach the stateful decoder twice. A missing

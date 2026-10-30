@@ -253,6 +253,52 @@ def test_answer_returning_after_end_cannot_answer_a_new_offer_with_same_id():
     assert "IN" not in m._audio_readers and m.answered_here("IN") is None
 
 
+def test_terminal_emit_can_rejoin_same_id_without_removing_replacement():
+    m, sent = media()
+    m._start_audio = lambda cid, claim: None
+    m.remember_offer({"id": "IN", "peerJid": "1@c.us"})
+    m.answer("IN")
+    original_emit = m.emit
+    def emit(event, data):
+        original_emit(event, data)
+        if event == "callstate" and data["data"]["state"] == "ENDED":
+            m.join_ongoing("IN", "2@lid", "1203@g.us")
+    m.calls.join_ongoing = lambda *a, **kw: {"call": "IN"}
+    m.emit = emit
+    m.handle({"ev": "end", "call": "IN"})
+    assert m.status("IN")["state"] == "ACTIVE" and "IN" in m._audio_readers
+
+
+def test_replacement_after_answer_identity_validation_is_never_activated(monkeypatch):
+    m, _ = media()
+    m.remember_offer({"id": "IN", "peerJid": "1@c.us"})
+    original = m._note_answered
+    def note(cid):
+        original(cid)
+        m.handle({"ev": "end", "call": cid})
+        m.remember_offer({"id": cid, "peerJid": "2@c.us"})
+    monkeypatch.setattr(m, "_note_answered", note)
+    m.answer("IN")
+    assert m.status("IN")["state"] == "INCOMING_RING" and not m._audio_readers
+
+
+def test_microphone_decode_cannot_retarget_old_pcm_to_replacement(monkeypatch):
+    fake = FakeCalls()
+    m, _ = media(fake)
+    m._start_audio = lambda cid, claim: None
+    m._placed("IN", "1@c.us", False, "")
+    m.handle({"ev": "accepted", "call": "IN"})
+    original = base64.b64decode
+    def decode(*args, **kw):
+        m.handle({"ev": "end", "call": "IN"})
+        m.remember_offer({"id": "IN", "peerJid": "2@c.us"})
+        return original(*args, **kw)
+    monkeypatch.setattr(base64, "b64decode", decode)
+    m.microphone({"pcm": base64.b64encode(pcm(*([123] * 2880))).decode()})
+    assert fake.written == [] and m._mic_owner is None
+    assert m._mic._pending == b""
+
+
 def test_a_ringing_call_rejected_and_unknown_ids():
     m, sent = media()
     m.remember_offer({"id": "IN2", "peerJid": "5511@c.us"})
