@@ -4,6 +4,8 @@ Bu sürüm, 2.1.0.0 sürümündeki her şeye ek olarak toplulukları ve yeniden 
 
 YENİLİKLER
 
+- Bir güncellemeyi kabul ettiğinizde WinZapp, indirmeden önce en son sürümün hangisi olduğunu yeniden denetler; böylece alfa sürümleri art arda yayımlandığında en yeniden daha eski bir alfa kurulmaz.
+
 - Neonize aramaları: yanıtlanan gelen aramanın sessiz kalmasına yol açabilen bir yarış düzeltildi, alınan çoklu ses kareleri korundu ve mikrofon dönüşümündeki aliasing azaltıldı. Ses artık müzakere edilen codec’i kullanıyor; paket sıralama ve kayıp işleme sınırlı tutuluyor.
 
 - WPPConnect Server 2.10.71 sürümüne güncellendi; tarayıcı katmanının kullandığı bir kütüphanedeki (deepmerge) güvenlik açığı için düzeltme ekliyor ve sunucu başlarken bunu yüklüyor.

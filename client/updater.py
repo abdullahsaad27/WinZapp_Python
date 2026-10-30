@@ -329,6 +329,23 @@ def select_release(releases: list, include_alpha: bool) -> "dict | None":
     return best
 
 
+def newer_release_than_offered(releases: list, include_alpha: bool,
+                               local_version: str, offered_version: str) -> "dict | None":
+    """The release newer than the one the update dialog offered, or None.
+
+    Alphas are published back to back, so by the time the user answers Yes
+    the offered build may already have a successor. Downloading the offered
+    one would install an alpha older than the newest. Only a strictly newer
+    release than both the offered one and the running version counts."""
+    latest = select_release(releases, include_alpha)
+    if latest is None:
+        return None
+    version = (latest.get("tag_name") or "").lstrip("vV")
+    if is_newer(version, offered_version) and is_newer(version, local_version):
+        return latest
+    return None
+
+
 def newer_excluded_alpha(releases: list, local_version: str,
                          include_alpha: bool) -> "dict | None":
     """The alpha a disabled alpha channel is keeping from an alpha build, or None.
@@ -1831,11 +1848,47 @@ class UpdateChecker(AlphaChannelChoiceMixin, BackgroundDownloadMixin):
             # _do_install() releases it on every path that does not end in
             # real_exit() (which takes the claim's owner process with it, so a
             # crashed-owner recovery clears it for free).
-            self._do_install(remote_version, zip_url, sha256sums_url, signature_url, is_alpha)
+            self._reconfirm_then_install(remote_version, zip_url, sha256sums_url,
+                                         signature_url, is_alpha)
         else:
             # User said No — retry in 3 hours
             self._release_prompt()
             self._schedule_retry()
+
+    def _reconfirm_then_install(self, remote_version: str, zip_url: str, sha256sums_url: str,
+                                signature_url: str, is_alpha: bool):
+        """After Yes, ask GitHub again which release is the newest before
+        downloading: alphas follow each other fast, and the one in the dialog
+        may no longer be the latest. The fetch runs off the UI thread."""
+        offered = (remote_version, zip_url, sha256sums_url, signature_url, is_alpha)
+        threading.Thread(target=self._reconfirm_worker, args=offered, daemon=True).start()
+
+    def _reconfirm_worker(self, *offered):
+        newest = None
+        try:
+            newest = newer_release_than_offered(
+                self._fetch_releases(), self._alpha_enabled(), __version__, offered[0])
+        except Exception:
+            # Cannot ask: the offered release is still a valid update.
+            logging.exception("Auto-updater: could not re-confirm the latest release")
+        if newest is not None:
+            assets = newest.get("assets", [])
+            offered = (
+                (newest.get("tag_name") or "").lstrip("vV"), find_zip_asset(assets),
+                _find_sha256sums_asset(assets), _find_signature_asset(assets),
+                is_alpha_release(newest),
+            )
+            logging.info("Auto-updater: %s superseded the offered release — installing it instead.",
+                         offered[0])
+        wx.CallAfter(self._install_reconfirmed, *offered)
+
+    def _install_reconfirmed(self, *args):
+        if getattr(self._mw, "_shutting_down", False):
+            self._release_prompt()
+            self._schedule_retry()
+            return
+        # Still held across the install, as in _show_update_dialog().
+        self._do_install(*args)
 
     def _main_window_ready(self) -> bool:
         """False while MainWindow.__init__ is still running (no window yet) or

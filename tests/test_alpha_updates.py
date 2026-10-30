@@ -502,3 +502,32 @@ def test_alpha_setting_extracted_from_legacy_settings():
     )
     assert glob["alpha_updates_enabled"] is True
     assert "alpha_updates_enabled" not in per["general"]
+
+
+# ── Re-confirming the newest release after the user says Yes ─────────────────
+
+def _full_release(tag):
+    return _release(tag, assets=_assets("WinZapp.zip"))
+
+
+def test_a_newer_alpha_published_meanwhile_replaces_the_offered_one():
+    releases = [_full_release("v0.25.0.1500alpha"), _full_release("v0.25.0.1502alpha"),
+                _full_release("v0.25.0.1501alpha")]
+    got = updater.newer_release_than_offered(releases, True, "0.25.0.0beta", "0.25.0.1501alpha")
+    assert got["tag_name"] == "v0.25.0.1502alpha"
+
+
+def test_the_offered_release_still_the_newest_is_kept():
+    releases = [_full_release("v0.25.0.1501alpha"), _full_release("v0.25.0.1500alpha")]
+    assert updater.newer_release_than_offered(
+        releases, True, "0.25.0.0beta", "0.25.0.1501alpha") is None
+
+
+def test_an_alpha_is_never_swapped_in_when_the_channel_is_off():
+    releases = [_full_release("v0.25.0.1502alpha"), _full_release("v0.26.0.0beta")]
+    got = updater.newer_release_than_offered(releases, False, "0.25.0.0beta", "0.26.0.0beta")
+    assert got is None
+
+
+def test_nothing_is_swapped_in_when_no_release_is_listed():
+    assert updater.newer_release_than_offered([], True, "0.25.0.0beta", "0.25.0.1501alpha") is None
