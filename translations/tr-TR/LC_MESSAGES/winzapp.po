@@ -11101,7 +11101,7 @@ msgstr "{keys} kullanan kısayollar: {count}"
 #: client/ui/dialogs/shortcuts_tab.py
 msgctxt "shortcut_keys_search_label"
 msgid "Search by &keys (press the combination)"
-msgstr "&Tuşlara göre ara (kombinasyona basın)"
+msgstr "T&uşlara göre ara (kombinasyona basın)"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/shortcuts_tab.py

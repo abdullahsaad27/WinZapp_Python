@@ -473,6 +473,32 @@ msgid "Add more &files"
 msgstr "&إضافة المزيد من الملفات"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_button"
+msgid "E&xport this account's logs..."
+msgstr "تصدير سجلات هذا ال&حساب..."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+#, python-brace-format
+msgctxt "advanced_export_logs_done"
+msgid "Logs exported. Number of files: {count}."
+msgstr "تم تصدير السجلات. عدد الملفات: {count}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_failed"
+msgid "Could not save the logs there. Try another folder."
+msgstr "تعذّر حفظ السجلات هناك. جرّب مجلدًا آخر."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_none"
+msgid "There are no logs to export."
+msgstr "لا توجد سجلات لتصديرها."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_working"
+msgid "Exporting the logs..."
+msgstr "جارٍ تصدير السجلات..."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
 msgctxt "advanced_fixed_port_check"
 msgid "Start the local API on a &fixed port"
 msgstr "بدء واجهة برمجة التطبيقات المحلية على &منفذ ثابت"
@@ -4762,23 +4788,31 @@ msgstr ""
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/conversation_data_dialog.py
-msgctxt "conversation_auto_transcribe_local_check"
+msgctxt "conversation_auto_transcribe_label"
 msgid ""
-"Transcribe the voice messages, audio and videos received in this "
-"conversation automatically, locally with Whisper"
+"Automatic transcription of the voice messages, audio and videos received in "
+"this conversation"
 msgstr ""
-"تسجيل الرسائل الصوتية والصوت ومقاطع الفيديو المستلمة في هذه المحادثة "
-"تلقائيًا، محليًا باستخدام Whisper"
+"التسجيل النصي التلقائي للرسائل الصوتية والمقاطع الصوتية ومقاطع الفيديو "
+"المستلمة في هذه المحادثة"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/conversation_data_dialog.py
-msgctxt "conversation_auto_transcribe_online_check"
-msgid ""
-"Transcribe the voice messages and audio received in this conversation "
-"automatically, with the online providers"
-msgstr ""
-"تسجيل الرسائل الصوتية والصوت المستلمة في هذه المحادثة تلقائيًا، باستخدام "
-"الموفّرين عبر الإنترنت"
+msgctxt "conversation_auto_transcribe_local"
+msgid "Local, with Whisper"
+msgstr "محليًا، باستخدام Whisper"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/conversation_data_dialog.py
+msgctxt "conversation_auto_transcribe_none"
+msgid "None"
+msgstr "بدون"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/conversation_data_dialog.py
+msgctxt "conversation_auto_transcribe_online"
+msgid "Online, with the AI providers"
+msgstr "عبر الإنترنت، مع موفّري الذكاء الاصطناعي"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/archived_panel.py
@@ -5512,6 +5546,7 @@ msgstr "&أدخل رقم هاتفك"
 #: client/ui/conversation_panel/media_files.py
 #: client/ui/conversation_panel/voice_recording.py
 #: client/ui/dialogs/advanced_tab.py client/ui/dialogs/settings_dialog.py
+#: client/ui/dialogs/transcription_options.py
 #, python-brace-format
 msgctxt "error"
 msgid "{app_name} Error"
@@ -9585,6 +9620,7 @@ msgstr "لا توجد رسالة في هذا الموضع."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/media_files.py
 #: client/ui/conversation_panel/message_menu.py client/ui/conversations.py
+#: client/ui/dialogs/advanced_tab.py
 #: client/ui/dialogs/conversation_data_dialog.py client/ui/media_viewer.py
 msgctxt "save_as"
 msgid "Save as..."
@@ -10929,6 +10965,32 @@ msgid "Up"
 msgstr "لأعلى"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+msgctxt "shortcut_keys_search_clear"
+msgid "C&lear keys"
+msgstr "م&سح المفاتيح"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+#, python-brace-format
+msgctxt "shortcut_keys_search_found"
+msgid "Shortcuts with {keys}: {count}"
+msgstr "الاختصارات التي تستخدم {keys}: {count}"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+msgctxt "shortcut_keys_search_label"
+msgid "Search by &keys (press the combination)"
+msgstr "البحث حسب ال&مفاتيح (اضغط التركيبة)"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+#, python-brace-format
+msgctxt "shortcut_keys_search_none"
+msgid "No shortcut uses {keys}."
+msgstr "لا يوجد اختصار يستخدم {keys}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "shortcut_newline"
 msgid "Insert a new line"
 msgstr "إدراج سطر جديد"
@@ -10982,7 +11044,9 @@ msgctxt "shortcut_quick_chat_assign_label"
 msgid ""
 "Ctrl+Alt+Shift+F1 to Ctrl+Alt+Shift+F10: assign the focused chat to quick "
 "chat 1 to 9 and 0"
-msgstr "Ctrl+Alt+Shift+F1 إلى Ctrl+Alt+Shift+F10: تعيين الدردشة المحددة للدردشة السريعة من 1 إلى 9 و0"
+msgstr ""
+"Ctrl+Alt+Shift+F1 إلى Ctrl+Alt+Shift+F10: تعيين الدردشة المحددة للدردشة "
+"السريعة من 1 إلى 9 و0"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/shortcuts_dialog.py
@@ -12651,6 +12715,18 @@ msgid ""
 "Apply the new models folder before downloading, repairing, verifying or "
 "removing a model."
 msgstr "طبّق مجلد النماذج الجديد قبل تنزيل أو إصلاح أو التحقق أو إزالة نموذج."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/transcription_options.py
+msgctxt "transcription_auto_both_on"
+msgid ""
+"Automatic transcription can be local or online, not both. Turn one of them "
+"off: in Local Transcription or in Online AI: Transcriptions and "
+"Descriptions."
+msgstr ""
+"يمكن أن يكون التسجيل النصي التلقائي محليًا أو عبر الإنترنت، وليس كليهما. "
+"أوقف أحدهما: في «التسجيل النصي المحلي» أو في «الذكاء الاصطناعي عبر الإنترنت:"
+" التسجيلات النصية والأوصاف»."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/main_window/auto_transcription.py
@@ -17061,6 +17137,22 @@ msgstr "&نعم"
 msgctxt "yesterday_at"
 msgid "Yesterday at {time}"
 msgstr "أمس في {time}"
+
+#~ msgctxt "conversation_auto_transcribe_local_check"
+#~ msgid ""
+#~ "Transcribe the voice messages, audio and videos received in this "
+#~ "conversation automatically, locally with Whisper"
+#~ msgstr ""
+#~ "تسجيل الرسائل الصوتية والصوت ومقاطع الفيديو المستلمة في هذه المحادثة "
+#~ "تلقائيًا، محليًا باستخدام Whisper"
+
+#~ msgctxt "conversation_auto_transcribe_online_check"
+#~ msgid ""
+#~ "Transcribe the voice messages and audio received in this conversation "
+#~ "automatically, with the online providers"
+#~ msgstr ""
+#~ "تسجيل الرسائل الصوتية والصوت المستلمة في هذه المحادثة تلقائيًا، باستخدام "
+#~ "الموفّرين عبر الإنترنت"
 
 #~ msgctxt "api_type_ask_message"
 #~ msgid ""
