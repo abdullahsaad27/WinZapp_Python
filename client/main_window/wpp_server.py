@@ -268,6 +268,18 @@ class WppServerMixin:
             )
             self._clear_broken_browser_dir(version_dir)
 
+        # A download cut short leaves its version directory with no browser in
+        # it, and the installer will not install over that either.
+        names = self._WINDOWS_CHROME_NAMES if sys.platform == "win32" else self._HEADLESS_SHELL_NAMES
+        for empty in browser_payload.version_dirs_without_browser(cache_dir, names):
+            if empty in cleared:
+                continue
+            cleared.add(empty)
+            logging.error(
+                "[headless-shell] %s holds no browser (a download cut short) "
+                "— clearing it so it can be downloaded again.", empty)
+            self._clear_broken_browser_dir(empty)
+
         browser_product = "chrome" if sys.platform == "win32" else "chrome-headless-shell"
         logging.info(
             "[headless-shell] %s not found in api/.cache — downloading it now "

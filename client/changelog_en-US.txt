@@ -159,6 +159,24 @@ WHAT'S NEW
 
 - Neonize: the pairing QR code is no longer cut off in the connection window. It is now shown whole, at a size the phone camera can read.
 
+- Settings > Advanced has a new "Export this account's logs..." button. It saves a .zip with the current account's logs (and the Neonize bridge's) in the background, announcing the result.
+
+- Settings > Shortcuts: a new field captures the keys you press and instantly lists the matching commands in every category, announcing how many were found, with a button to clear the search. The shortcut tree no longer announces unwanted selections while you type, it is built only once when Settings opens, Esc closes the window without errors and, after applying changes, focus goes to the OK button.
+
+- Automatic transcription of a chat is now a single choice in the chat or group data window: None, Online with AI or Local with Whisper. The same message is never transcribed twice and inconsistent settings are rejected.
+
+- WinZapp starts and opens Settings faster: only contacts that really changed are rewritten to the database, the database's per-query debug log (hundreds of MB) is silenced and incomplete Chrome folders left by interrupted downloads are cleaned up.
+
+- F5 no longer duplicates conversations in the list for a while: the link between the @lid address and the phone number is kept during the reload of the same account.
+
+- Reactions received through the @lid address now reach the conversation stored under the phone number (and the other way around), so they show correctly in the preview, in the list and in live notifications.
+
+- "Replies to the community announcement" now appears only in community announcement groups, not in ordinary groups.
+
+- WPPConnect: starring a message and liking a status work again.
+
+- Neonize: app state sync no longer causes conflicts that corrupted the chat read state; marking a chat as read no longer holds up sending messages; messages sent to a disappearing chat carry its timer; read receipts respect WhatsApp's privacy option (silent receipts when turned off); and pairing by phone number in Brazil tries the number with and without the 9th digit.
+
 V2.1.0.0
 
 This release brings transcription of voice messages on your own computer, with nothing sent anywhere, and online AI transcription and description of voice messages, images, videos, stickers and PDFs.

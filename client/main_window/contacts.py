@@ -226,18 +226,22 @@ class ContactsMixin:
         )
 
     def _clean_contacts_cached(self):
-        changed = False
+        # Only the contacts it changed are written back. It wrote the whole
+        # address book (9,465 rows on a real account) whenever one name was
+        # bad, which a sync brings back, on every start, before the window
+        # showed.
+        changed = {}
         for jid, contact in list(self.contacts.items()):
             for field in ("name", "pushName"):
                 val = contact.get(field)
                 if self._is_bad_contact_name(val):
                     if field in contact:
                         del contact[field]
-                        changed = True
+                        changed[jid] = contact
             if not contact.get("name") and not contact.get("pushName"):
                 contact["name"] = ""
         if changed and hasattr(self, "db"):
-            self.db.upsert_contacts_batch(self.contacts)
+            self.db.upsert_contacts_batch(changed)
 
     def get_remote_contacts(self):
         context = capture_sync_context(self)

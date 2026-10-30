@@ -159,6 +159,24 @@ YENİLİKLER
 
 - Neonize: eşleştirme QR kodu bağlantı penceresinde artık kesik görünmüyor. Artık tamamı, telefon kamerasının okuyabileceği bir boyutta gösteriliyor.
 
+- Ayarlar > Gelişmiş bölümünde yeni bir "Bu hesabın günlüklerini dışa aktar..." düğmesi var. Geçerli hesabın (ve Neonize köprüsünün) günlüklerini içeren bir .zip dosyasını arka planda kaydeder ve sonucu duyurur.
+
+- Ayarlar > Kısayollar: yeni bir alan bastığınız tuşları yakalar ve eşleşen komutları tüm kategorilerde anında listeler, kaç tane bulunduğunu duyurur; aramayı temizleyen bir düğme de vardır. Kısayol ağacı yazarken artık istenmeyen seçimleri duyurmaz, Ayarlar açılırken yalnızca bir kez oluşturulur, Esc tuşu pencereyi hatasız kapatır ve değişiklikler uygulandıktan sonra odak Tamam düğmesine gider.
+
+- Bir sohbetin otomatik yazıya dökümü artık sohbet veya grup verileri penceresinde tek bir seçimdir: Yok, Yapay zekâ ile çevrimiçi veya Whisper ile yerel. Aynı mesaj asla iki kez yazıya dökülmez ve tutarsız ayarlar reddedilir.
+
+- WinZapp daha hızlı başlar ve Ayarlar daha hızlı açılır: veritabanına yalnızca gerçekten değişen kişiler yeniden yazılır, veritabanındaki her sorgunun hata ayıklama günlüğü (yüzlerce MB) susturuldu ve yarım kalan indirmelerden artakalan eksik Chrome klasörleri temizlenir.
+
+- F5 artık bir süre sohbetleri listede çoğaltmaz: @lid adresi ile telefon numarası arasındaki bağlantı aynı hesabın yeniden yüklenmesi sırasında korunur.
+
+- @lid adresiyle alınan tepkiler artık telefon numarası altında kayıtlı sohbete ulaşır (ve tersi), böylece önizlemede, listede ve canlı bildirimlerde doğru görünür.
+
+- "Topluluk duyurusuna yanıtlar" artık yalnızca topluluk duyuru gruplarında görünür, sıradan gruplarda görünmez.
+
+- WPPConnect: bir mesajı yıldızlama ve bir durumu beğenme yeniden çalışıyor.
+
+- Neonize: uygulama durumu eşitlemesi artık sohbetlerin okundu durumunu bozan çakışmalara yol açmaz; bir sohbeti okundu işaretlemek artık mesaj göndermeyi bekletmez; süreli sohbetlere gönderilen mesajlar sohbetin zamanlayıcısını taşır; okundu bilgileri WhatsApp gizlilik seçeneğine uyar (kapalıyken sessiz bildirimler); ve Brezilya'da numarayla eşleştirme numarayı 9. rakamlı ve rakamsız dener.
+
 V2.1.0.0
 
 Bu sürüm, hiçbir yere bir şey gönderilmeden sesli mesajların kendi bilgisayarınızda yazıya dökülmesini ve sesli mesajların, görsellerin, videoların, çıkartmaların ve PDF'lerin çevrimiçi yapay zekâ ile yazıya dökülmesini ve betimlenmesini getiriyor.

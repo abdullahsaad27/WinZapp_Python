@@ -159,6 +159,24 @@ NOWOŚCI
 
 - Neonize: kod QR parowania nie jest już ucięty w oknie połączenia. Jest teraz pokazywany w całości, w rozmiarze, który aparat telefonu potrafi odczytać.
 
+- W Ustawieniach > Zaawansowane jest nowy przycisk "Eksportuj logi tego konta...". Zapisuje w tle plik .zip z logami bieżącego konta (i mostu Neonize) i ogłasza wynik.
+
+- Ustawienia > Skróty: nowe pole przechwytuje naciskane klawisze i od razu wyświetla pasujące polecenia we wszystkich kategoriach, ogłaszając ich liczbę, z przyciskiem czyszczącym wyszukiwanie. Drzewo skrótów nie ogłasza już niepożądanych zaznaczeń podczas pisania, jest budowane tylko raz po otwarciu Ustawień, klawisz Esc zamyka okno bez błędów, a po zastosowaniu zmian fokus przechodzi na przycisk OK.
+
+- Automatyczna transkrypcja rozmowy jest teraz pojedynczym wyborem w oknie danych rozmowy lub grupy: Brak, Online z AI albo Lokalnie z Whisper. Ta sama wiadomość nigdy nie jest transkrybowana dwa razy, a niespójne ustawienia są odrzucane.
+
+- WinZapp uruchamia się i otwiera Ustawienia szybciej: do bazy danych zapisywane są tylko kontakty, które naprawdę się zmieniły, wyciszono dziennik debugowania każdego zapytania do bazy (setki MB), a niekompletne foldery Chrome pozostawione przez przerwane pobierania są czyszczone.
+
+- F5 nie duplikuje już na jakiś czas rozmów na liście: powiązanie adresu @lid z numerem telefonu jest zachowywane podczas ponownego wczytywania tego samego konta.
+
+- Reakcje odebrane przez adres @lid trafiają teraz do rozmowy zapisanej pod numerem telefonu (i odwrotnie), dzięki czemu są poprawnie widoczne w podglądzie, na liście i w powiadomieniach na żywo.
+
+- "Odpowiedzi na ogłoszenie społeczności" pojawia się teraz tylko w grupach ogłoszeń społeczności, a nie w zwykłych grupach.
+
+- WPPConnect: oznaczanie wiadomości gwiazdką i polubienie statusu znów działają.
+
+- Neonize: synchronizacja stanu aplikacji nie powoduje już konfliktów, które psuły stan przeczytania rozmów; oznaczenie rozmowy jako przeczytanej nie wstrzymuje już wysyłania wiadomości; wiadomości wysyłane do rozmowy z znikającymi wiadomościami niosą jej licznik; potwierdzenia odczytu respektują opcję prywatności WhatsApp (ciche potwierdzenia, gdy jest wyłączona); a parowanie przez numer w Brazylii próbuje numeru z dziewiątą cyfrą i bez niej.
+
 V2.1.0.0
 
 W tej wersji pojawia się transkrypcja wiadomości głosowych na Twoim własnym komputerze, bez wysyłania czegokolwiek, a także transkrypcje i opisy wiadomości głosowych, obrazów, filmów, naklejek i plików PDF tworzone przez AI online.

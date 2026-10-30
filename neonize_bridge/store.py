@@ -73,7 +73,8 @@ def migrate_legacy_schema(conn):
 # nobody's to read nor to mark as read.
 SYSTEM_TYPES = ("gp2", "call_log")
 
-CHAT_FIELDS = {"name", "ts", "unread", "archived", "pinned", "muted", "locked"}
+CHAT_FIELDS = {"name", "ts", "unread", "archived", "pinned", "muted", "locked",
+               "ephemeral", "ephemeral_ts"}
 
 
 #: receipt stage -> WhatsApp Web ack
@@ -126,6 +127,12 @@ class Store:
                 self._conn.execute("ALTER TABLE chats ADD COLUMN read_ts INTEGER DEFAULT 0")
             except sqlite3.OperationalError:
                 pass
+            # the chat's temporary-messages timer, in seconds (chat_timers.py)
+            for column in ("ephemeral", "ephemeral_ts"):
+                try:
+                    self._conn.execute(f"ALTER TABLE chats ADD COLUMN {column} INTEGER DEFAULT 0")
+                except sqlite3.OperationalError:
+                    pass
             lower_dates_raised_by_notices(self._conn)
 
     def close(self):
@@ -144,6 +151,14 @@ class Store:
                 self._conn.execute(f"UPDATE chats SET {sets} WHERE jid=?",
                                    (*fields.values(), jid))
             self._conn.commit()
+
+    def chat_timer(self, jid):
+        """(seconds, setting timestamp) of the chat's temporary messages; None
+        when the chat is not stored. (0, ...) is off."""
+        with self._lock:
+            r = self._conn.execute(
+                "SELECT ephemeral, ephemeral_ts FROM chats WHERE jid=?", (jid,)).fetchone()
+        return None if r is None else (int(r["ephemeral"] or 0), int(r["ephemeral_ts"] or 0))
 
     def chats_in_batch(self, rows):
         """Rows (jid, fields) as `chat` writes them, in one transaction: a
@@ -190,20 +205,23 @@ class Store:
         did give is left alone."""
         with self._lock:
             rows = [dict(r) for r in self._conn.execute("SELECT * FROM chats")]
+            # The newest real message of every dateless chat, in ONE query.
+            # It was one query per chat, from Python: a real account had 6,760
+            # dateless chats (almost all without a message) and list-chats
+            # spent 1.1 s here, holding the store's lock, which stalled the
+            # bridge's loop and everything behind it, sends included. Calls
+            # and revocations still count as activity; notices do not.
+            newest = {chat: int(ts) for chat, ts in self._conn.execute(
+                "SELECT m.chat, MAX(m.ts) FROM msgs m "
+                "WHERE m.chat IN (SELECT jid FROM chats WHERE IFNULL(ts, 0) <= 0) "
+                "AND IFNULL(json_extract(m.data, '$.type'), '') <> 'gp2' "
+                "GROUP BY m.chat") if ts}
             dated = []
             for row in rows:
-                if int(row["ts"] or 0) > 0:
+                if int(row["ts"] or 0) > 0 or row["jid"] not in newest:
                     continue
-                # newest first through the (chat, ts) index: it stops at the first
-                # row that is not a notice. Calls and revocations count as activity.
-                found = self._conn.execute(
-                    "SELECT ts FROM msgs WHERE chat=? "
-                    "AND IFNULL(json_extract(data, '$.type'), '') <> 'gp2' "
-                    "ORDER BY ts DESC LIMIT 1", (row["jid"],)).fetchone()
-                newest = found[0] if found else 0
-                if newest:
-                    row["ts"] = int(newest)
-                    dated.append((row["ts"], row["jid"]))
+                row["ts"] = newest[row["jid"]]
+                dated.append((row["ts"], row["jid"]))
             if dated:
                 self._conn.executemany("UPDATE chats SET ts=? WHERE jid=?", dated)
                 self._conn.commit()
@@ -599,6 +617,17 @@ class Store:
             self._conn.execute(
                 "INSERT OR IGNORE INTO receipts(msg, who, stage, ts) VALUES (?,?,?,?)",
                 (msg_id, who, stage, ts))
+            self._conn.commit()
+
+    def receipts(self, msg_ids, who, stage, ts=0):
+        """`receipt` for every message of one receipt event, in one transaction:
+        an event names many messages, and a commit for each (a disk sync,
+        ~6 ms) held the lock long enough, in a busy group, to stall the
+        bridge's loop. All or none is written, as each one was before."""
+        with self._lock:
+            self._conn.executemany(
+                "INSERT OR IGNORE INTO receipts(msg, who, stage, ts) VALUES (?,?,?,?)",
+                [(msg_id, who, stage, ts) for msg_id in msg_ids])
             self._conn.commit()
 
     def receipts_of(self, msg_id):

@@ -159,6 +159,24 @@ NOUTĂȚI
 
 - Neonize: codul QR de asociere nu mai apare tăiat în fereastra de conectare. Acum este afișat întreg, la o dimensiune pe care camera telefonului o poate citi.
 
+- În Setări > Avansat există un buton nou "Exportă jurnalele acestui cont...". Salvează în fundal un .zip cu jurnalele contului curent (și ale punții Neonize) și anunță rezultatul.
+
+- Setări > Scurtături: un câmp nou captează tastele apăsate și listează imediat comenzile potrivite din toate categoriile, anunțând câte au fost găsite, cu un buton pentru ștergerea căutării. Arborele de scurtături nu mai anunță selecții nedorite în timp ce scrieți, este construit o singură dată la deschiderea Setărilor, tasta Esc închide fereastra fără erori, iar după aplicarea modificărilor focalizarea trece pe butonul OK.
+
+- Transcrierea automată a unei conversații este acum o alegere unică în fereastra cu datele conversației sau ale grupului: Niciuna, Online cu AI sau Local cu Whisper. Același mesaj nu mai este transcris de două ori, iar setările incoerente sunt respinse.
+
+- WinZapp pornește și deschide Setările mai repede: în baza de date sunt rescriși doar contactele care s-au schimbat cu adevărat, jurnalul de depanare al fiecărei interogări din baza de date (sute de MB) a fost redus la tăcere, iar folderele Chrome incomplete rămase de la descărcări întrerupte sunt curățate.
+
+- F5 nu mai duplică pentru o vreme conversațiile din listă: legătura dintre adresa @lid și numărul de telefon este păstrată la reîncărcarea aceluiași cont.
+
+- Reacțiile primite prin adresa @lid ajung acum în conversația salvată sub numărul de telefon (și invers), apărând corect în previzualizare, în listă și în notificările în timp real.
+
+- "Răspunsuri la anunțul comunității" apare acum doar în grupurile de anunțuri ale comunității, nu și în grupurile obișnuite.
+
+- WPPConnect: marcarea unui mesaj cu stea și aprecierea unui status funcționează din nou.
+
+- Neonize: sincronizarea stării aplicației nu mai provoacă conflicte care corupeau starea de citire a conversațiilor; marcarea unei conversații ca citită nu mai întârzie trimiterea mesajelor; mesajele trimise într-o conversație temporară poartă temporizatorul ei; confirmările de citire respectă opțiunea de confidențialitate WhatsApp (confirmări silențioase când este dezactivată); iar asocierea prin număr în Brazilia încearcă numărul cu și fără a 9-a cifră.
+
 V2.1.0.0
 
 Această versiune aduce transcrierea mesajelor vocale pe propriul dumneavoastră computer, fără să fie trimis nimic nicăieri, și transcrierea și descrierea cu AI online a mesajelor vocale, imaginilor, videoclipurilor, autocolantelor și PDF-urilor.

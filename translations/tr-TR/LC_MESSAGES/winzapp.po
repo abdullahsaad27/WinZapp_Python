@@ -480,6 +480,32 @@ msgid "Add more &files"
 msgstr "Daha fazla &dosya ekle"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_button"
+msgid "E&xport this account's logs..."
+msgstr "&Bu hesabın günlüklerini dışa aktar..."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+#, python-brace-format
+msgctxt "advanced_export_logs_done"
+msgid "Logs exported. Number of files: {count}."
+msgstr "Günlükler dışa aktarıldı. Dosya sayısı: {count}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_failed"
+msgid "Could not save the logs there. Try another folder."
+msgstr "Günlükler oraya kaydedilemedi. Başka bir klasör deneyin."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_none"
+msgid "There are no logs to export."
+msgstr "Dışa aktarılacak günlük yok."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_working"
+msgid "Exporting the logs..."
+msgstr "Günlükler dışa aktarılıyor..."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
 msgctxt "advanced_fixed_port_check"
 msgid "Start the local API on a &fixed port"
 msgstr "Yerel API'yi &sabit bir bağlantı noktasında başlat"
@@ -4834,23 +4860,31 @@ msgstr ""
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/conversation_data_dialog.py
-msgctxt "conversation_auto_transcribe_local_check"
+msgctxt "conversation_auto_transcribe_label"
 msgid ""
-"Transcribe the voice messages, audio and videos received in this "
-"conversation automatically, locally with Whisper"
+"Automatic transcription of the voice messages, audio and videos received in "
+"this conversation"
 msgstr ""
-"Bu sohbette alınan sesli mesajları, ses dosyalarını ve videoları Whisper ile"
-" yerel olarak otomatik yazıya dök"
+"Bu sohbette alınan sesli mesajların, ses dosyalarının ve videoların otomatik"
+" yazıya dökümü"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/conversation_data_dialog.py
-msgctxt "conversation_auto_transcribe_online_check"
-msgid ""
-"Transcribe the voice messages and audio received in this conversation "
-"automatically, with the online providers"
-msgstr ""
-"Bu sohbette alınan sesli mesajları ve ses dosyalarını çevrimiçi "
-"sağlayıcılarla otomatik olarak yazıya dök"
+msgctxt "conversation_auto_transcribe_local"
+msgid "Local, with Whisper"
+msgstr "Yerel, Whisper ile"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/conversation_data_dialog.py
+msgctxt "conversation_auto_transcribe_none"
+msgid "None"
+msgstr "Hiçbiri"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/conversation_data_dialog.py
+msgctxt "conversation_auto_transcribe_online"
+msgid "Online, with the AI providers"
+msgstr "Çevrimiçi, yapay zekâ sağlayıcılarıyla"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/archived_panel.py
@@ -5588,6 +5622,7 @@ msgstr "Telefon numaranızı &girin"
 #: client/ui/conversation_panel/media_files.py
 #: client/ui/conversation_panel/voice_recording.py
 #: client/ui/dialogs/advanced_tab.py client/ui/dialogs/settings_dialog.py
+#: client/ui/dialogs/transcription_options.py
 #, python-brace-format
 msgctxt "error"
 msgid "{app_name} Error"
@@ -9694,6 +9729,7 @@ msgstr "Bu konumda mesaj yok."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/media_files.py
 #: client/ui/conversation_panel/message_menu.py client/ui/conversations.py
+#: client/ui/dialogs/advanced_tab.py
 #: client/ui/dialogs/conversation_data_dialog.py client/ui/media_viewer.py
 msgctxt "save_as"
 msgid "Save as..."
@@ -11047,6 +11083,32 @@ msgstr "Tab"
 msgctxt "shortcut_key_up"
 msgid "Up"
 msgstr "Yukarı"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+msgctxt "shortcut_keys_search_clear"
+msgid "C&lear keys"
+msgstr "Tuşları te&mizle"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+#, python-brace-format
+msgctxt "shortcut_keys_search_found"
+msgid "Shortcuts with {keys}: {count}"
+msgstr "{keys} kullanan kısayollar: {count}"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+msgctxt "shortcut_keys_search_label"
+msgid "Search by &keys (press the combination)"
+msgstr "T&uşlara göre ara (kombinasyona basın)"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+#, python-brace-format
+msgctxt "shortcut_keys_search_none"
+msgid "No shortcut uses {keys}."
+msgstr "{keys} kullanan kısayol yok."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "shortcut_newline"
@@ -12792,6 +12854,18 @@ msgid ""
 msgstr ""
 "Bir modeli indirmeden, onarmadan, doğrulamadan veya kaldırmadan önce yeni "
 "modeller klasörünü uygulayın."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/transcription_options.py
+msgctxt "transcription_auto_both_on"
+msgid ""
+"Automatic transcription can be local or online, not both. Turn one of them "
+"off: in Local Transcription or in Online AI: Transcriptions and "
+"Descriptions."
+msgstr ""
+"Otomatik yazıya döküm yerel ya da çevrimiçi olabilir, ikisi birden olamaz. "
+"Birini kapatın: Yerel yazıya döküm ya da Çevrimiçi Yapay Zekâ: Yazıya Dökme "
+"ve Betimleme bölümünde."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/main_window/auto_transcription.py
@@ -17304,3 +17378,19 @@ msgstr "&Evet"
 msgctxt "yesterday_at"
 msgid "Yesterday at {time}"
 msgstr "Dün {time}"
+
+#~ msgctxt "conversation_auto_transcribe_local_check"
+#~ msgid ""
+#~ "Transcribe the voice messages, audio and videos received in this "
+#~ "conversation automatically, locally with Whisper"
+#~ msgstr ""
+#~ "Bu sohbette alınan sesli mesajları, ses dosyalarını ve videoları Whisper ile"
+#~ " yerel olarak otomatik yazıya dök"
+
+#~ msgctxt "conversation_auto_transcribe_online_check"
+#~ msgid ""
+#~ "Transcribe the voice messages and audio received in this conversation "
+#~ "automatically, with the online providers"
+#~ msgstr ""
+#~ "Bu sohbette alınan sesli mesajları ve ses dosyalarını çevrimiçi "
+#~ "sağlayıcılarla otomatik olarak yazıya dök"

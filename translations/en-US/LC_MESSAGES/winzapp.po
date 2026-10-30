@@ -480,6 +480,32 @@ msgid "Add more &files"
 msgstr "Add more &files"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_button"
+msgid "E&xport this account's logs..."
+msgstr "E&xport this account's logs..."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+#, python-brace-format
+msgctxt "advanced_export_logs_done"
+msgid "Logs exported. Number of files: {count}."
+msgstr "Logs exported. Number of files: {count}."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_failed"
+msgid "Could not save the logs there. Try another folder."
+msgstr "Could not save the logs there. Try another folder."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_none"
+msgid "There are no logs to export."
+msgstr "There are no logs to export."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
+msgctxt "advanced_export_logs_working"
+msgid "Exporting the logs..."
+msgstr "Exporting the logs..."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po client/ui/dialogs/advanced_tab.py
 msgctxt "advanced_fixed_port_check"
 msgid "Start the local API on a &fixed port"
 msgstr "Start the local API on a &fixed port"
@@ -4815,23 +4841,31 @@ msgstr ""
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/conversation_data_dialog.py
-msgctxt "conversation_auto_transcribe_local_check"
+msgctxt "conversation_auto_transcribe_label"
 msgid ""
-"Transcribe the voice messages, audio and videos received in this "
-"conversation automatically, locally with Whisper"
+"Automatic transcription of the voice messages, audio and videos received in "
+"this conversation"
 msgstr ""
-"Transcribe the voice messages, audio and videos received in this "
-"conversation automatically, locally with Whisper"
+"Automatic transcription of the voice messages, audio and videos received in "
+"this conversation"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/dialogs/conversation_data_dialog.py
-msgctxt "conversation_auto_transcribe_online_check"
-msgid ""
-"Transcribe the voice messages and audio received in this conversation "
-"automatically, with the online providers"
-msgstr ""
-"Transcribe the voice messages and audio received in this conversation "
-"automatically, with the online providers"
+msgctxt "conversation_auto_transcribe_local"
+msgid "Local, with Whisper"
+msgstr "Local, with Whisper"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/conversation_data_dialog.py
+msgctxt "conversation_auto_transcribe_none"
+msgid "None"
+msgstr "None"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/conversation_data_dialog.py
+msgctxt "conversation_auto_transcribe_online"
+msgid "Online, with the AI providers"
+msgstr "Online, with the AI providers"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/archived_panel.py
@@ -5570,6 +5604,7 @@ msgstr "&Enter your phone number"
 #: client/ui/conversation_panel/media_files.py
 #: client/ui/conversation_panel/voice_recording.py
 #: client/ui/dialogs/advanced_tab.py client/ui/dialogs/settings_dialog.py
+#: client/ui/dialogs/transcription_options.py
 #, python-brace-format
 msgctxt "error"
 msgid "{app_name} Error"
@@ -9672,6 +9707,7 @@ msgstr "There is no message at that position."
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/ui/conversation_panel/media_files.py
 #: client/ui/conversation_panel/message_menu.py client/ui/conversations.py
+#: client/ui/dialogs/advanced_tab.py
 #: client/ui/dialogs/conversation_data_dialog.py client/ui/media_viewer.py
 msgctxt "save_as"
 msgid "Save as..."
@@ -11026,6 +11062,32 @@ msgstr "Tab"
 msgctxt "shortcut_key_up"
 msgid "Up"
 msgstr "Up"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+msgctxt "shortcut_keys_search_clear"
+msgid "C&lear keys"
+msgstr "C&lear keys"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+#, python-brace-format
+msgctxt "shortcut_keys_search_found"
+msgid "Shortcuts with {keys}: {count}"
+msgstr "Shortcuts with {keys}: {count}"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+msgctxt "shortcut_keys_search_label"
+msgid "Search by &keys (press the combination)"
+msgstr "Search by &keys (press the combination)"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_tab.py
+#, python-brace-format
+msgctxt "shortcut_keys_search_none"
+msgid "No shortcut uses {keys}."
+msgstr "No shortcut uses {keys}."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "shortcut_newline"
@@ -12774,6 +12836,18 @@ msgid ""
 msgstr ""
 "Apply the new models folder before downloading, repairing, verifying or "
 "removing a model."
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/transcription_options.py
+msgctxt "transcription_auto_both_on"
+msgid ""
+"Automatic transcription can be local or online, not both. Turn one of them "
+"off: in Local Transcription or in Online AI: Transcriptions and "
+"Descriptions."
+msgstr ""
+"Automatic transcription can be local or online, not both. Turn one of them "
+"off: in Local Transcription or in Online AI: Transcriptions and "
+"Descriptions."
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 #: client/main_window/auto_transcription.py

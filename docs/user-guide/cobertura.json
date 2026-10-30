@@ -4,6 +4,7 @@
   "commit": "4b8a5c6a",
   "data": "14/10/2026",
   "itens": {
+    "6748264cf7b5": "Ligações pelo Neonize: corrigida uma condição de corrida que podia deixar uma ch",
     "7df3f6c9881e": "O WPPConnect Server foi atualizado para a 2.10.71, que traz uma correção para um",
     "fb92ee10893c": "Chats de acesso rápido: Ctrl+Alt+Shift+F1–F10 atribui um chat e Ctrl+Shift+a mes",
     "bec5a12d86e3": "O árabe agora está disponível em Configurações > Geral > Idioma, com textos em á",
@@ -81,6 +82,14 @@
     "560b2402ce0f": "Neonize: se a ponte some enquanto o WinZapp está aberto (por exemplo, uma execuç",
     "2fc8239b935d": "Neonize: quando o último WinZapp sai, a ponte agora é convidada a fechar suas co",
     "ea9236a58e40": "Neonize: o QR code de pareamento não aparece mais cortado na janela de conexão. ",
-    "6748264cf7b5": "Ligações pelo Neonize: corrigida uma condição de corrida que podia deixar uma ch"
+    "3ad0784fef16": "Em Configurações > Avançado há o novo botão \"Exportar os logs desta conta...\". E",
+    "0c94433ab5fb": "Configurações > Atalhos: um novo campo captura as teclas pressionadas e lista na",
+    "81cf03620630": "A transcrição automática de uma conversa agora é uma escolha única na janela de ",
+    "a139b151c000": "O WinZapp inicia e abre as Configurações mais rápido: só os contatos que realmen",
+    "aafed43c7fb8": "O F5 não duplica mais as conversas na lista por um tempo: a ligação entre o ende",
+    "dddbb629e3c9": "Reações recebidas pelo endereço @lid agora chegam à conversa guardada sob o núme",
+    "5f17b09346b3": "\"Respostas ao aviso da comunidade\" agora aparece apenas nos grupos de avisos de ",
+    "e20e46f51d00": "WPPConnect: favoritar uma mensagem e curtir um status voltam a funcionar.",
+    "edfe2db8fcdf": "Neonize: a sincronização do estado do app não causa mais conflitos que corrompia"
   }
 }
