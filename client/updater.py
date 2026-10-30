@@ -34,6 +34,7 @@ from core.dialog_foreground import bring_to_front_if_hidden, message_box, parent
 from core.wpp_runtime import homologated_wpp_tag
 from update_channel_choice import AlphaChannelChoiceMixin
 from config import GITHUB_API_LATEST_RELEASE, GITHUB_API_LATEST_STABLE_RELEASE
+from update_reconfirm import ReconfirmMixin
 from update_background import BackgroundDownloadMixin, background_downloads_enabled
 from update_package import discard_package, download_update_package, extraction_root
 from core.update_handoff import InstallHandoff
@@ -1389,7 +1390,7 @@ class UpdateDialog(wx.Dialog):
 
 # ── UpdateChecker ─────────────────────────────────────────────────────────────
 
-class UpdateChecker(AlphaChannelChoiceMixin, BackgroundDownloadMixin):
+class UpdateChecker(AlphaChannelChoiceMixin, BackgroundDownloadMixin, ReconfirmMixin):
     """
     Runs version checks in a background thread.
     Shows UpdateDialog on the main thread when a newer version is found.
@@ -1854,41 +1855,6 @@ class UpdateChecker(AlphaChannelChoiceMixin, BackgroundDownloadMixin):
             # User said No — retry in 3 hours
             self._release_prompt()
             self._schedule_retry()
-
-    def _reconfirm_then_install(self, remote_version: str, zip_url: str, sha256sums_url: str,
-                                signature_url: str, is_alpha: bool):
-        """After Yes, ask GitHub again which release is the newest before
-        downloading: alphas follow each other fast, and the one in the dialog
-        may no longer be the latest. The fetch runs off the UI thread."""
-        offered = (remote_version, zip_url, sha256sums_url, signature_url, is_alpha)
-        threading.Thread(target=self._reconfirm_worker, args=offered, daemon=True).start()
-
-    def _reconfirm_worker(self, *offered):
-        newest = None
-        try:
-            newest = newer_release_than_offered(
-                self._fetch_releases(), self._alpha_enabled(), __version__, offered[0])
-        except Exception:
-            # Cannot ask: the offered release is still a valid update.
-            logging.exception("Auto-updater: could not re-confirm the latest release")
-        if newest is not None:
-            assets = newest.get("assets", [])
-            offered = (
-                (newest.get("tag_name") or "").lstrip("vV"), find_zip_asset(assets),
-                _find_sha256sums_asset(assets), _find_signature_asset(assets),
-                is_alpha_release(newest),
-            )
-            logging.info("Auto-updater: %s superseded the offered release — installing it instead.",
-                         offered[0])
-        wx.CallAfter(self._install_reconfirmed, *offered)
-
-    def _install_reconfirmed(self, *args):
-        if getattr(self._mw, "_shutting_down", False):
-            self._release_prompt()
-            self._schedule_retry()
-            return
-        # Still held across the install, as in _show_update_dialog().
-        self._do_install(*args)
 
     def _main_window_ready(self) -> bool:
         """False while MainWindow.__init__ is still running (no window yet) or
