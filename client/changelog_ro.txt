@@ -4,6 +4,8 @@ Această versiune aduce comunitățile și o fereastră de setări reorganizată
 
 NOUTĂȚI
 
+- Chaturi rapide: Ctrl+Alt+Shift+F1–F10 atribuie un chat, iar Ctrl+Shift+aceeași tastă funcțională îl deschide de oriunde din fereastră (F10 este poziția 0). Atribuirile sunt separate pentru fiecare cont, scurtăturile pot fi schimbate în Setări, iar scurtăturile marcajelor rămân disponibile.
+
 - Limba arabă este acum disponibilă în Setări > General > Limbă, cu texte în arabă în programul de instalare și dezinstalare pentru Windows.
 
 - WPPConnect Server a fost actualizat la 2.10.70, care întărește rutele de administrare (listarea și copia de rezervă a sesiunilor cer acum cheia secretă într-un antet, nu în adresă), folderele de sesiune pe care le șterge la deconectare și modul de separare a listelor de contacte. Curățarea sesiunilor la închidere cu un API personalizat a fost adaptată acestei schimbări.
