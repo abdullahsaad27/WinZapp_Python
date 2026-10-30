@@ -4,6 +4,8 @@ W tej wersji pojawiają się społeczności i zreorganizowane okno ustawień, op
 
 NOWOŚCI
 
+- Szybkie czaty: Ctrl+Alt+Shift+F1–F10 przypisuje czat, a Ctrl+Shift+ten sam klawisz funkcyjny otwiera go z dowolnego miejsca w oknie (F10 to numer 0). Przypisania są osobne dla konta, skróty można zmieniać w ustawieniach, a dotychczasowe skróty zakładek pozostają dostępne.
+
 - WPPConnect Server zaktualizowany do wersji 2.10.70, która zaostrza swoje trasy administracyjne (wyświetlanie i kopia zapasowa sesji wymagają teraz tajnego klucza w nagłówku, a nie w adresie), foldery sesji usuwane przy wylogowaniu oraz sposób dzielenia list kontaktów. Czyszczenie sesji przy zamykaniu z własnym API zostało dostosowane do tej zmiany.
 
 - Połączenie grupowe, które zadzwoniło i nie zostało odebrane, jest teraz zapisywane w swojej grupie, a powiadomienie o połączeniu podaje grupę: nie pojawia się już jako prywatne połączenie od osoby, która je rozpoczęła.
