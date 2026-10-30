@@ -10826,6 +10826,7 @@ msgstr ""
 "oluştur"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_dialog.py
 msgctxt "shortcut_ctrl_shift_num_label"
 msgid "Ctrl+Shift+0 to Ctrl+Shift+9: remove a bookmark"
 msgstr "Ctrl+Shift+0 - Ctrl+Shift+9: yer işaretini kaldır"
@@ -11094,6 +11095,22 @@ msgstr "Önceki arama listesi filtresi"
 msgctxt "shortcut_previous_tone"
 msgid "Previous emoji skin tone"
 msgstr "Önceki emoji ten rengi"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_dialog.py
+msgctxt "shortcut_quick_chat_assign_label"
+msgid ""
+"Ctrl+Alt+Shift+F1 to Ctrl+Alt+Shift+F10: assign the focused chat to quick "
+"chat 1 to 9 and 0"
+msgstr ""
+"Ctrl+Alt+Shift+F1 - Ctrl+Alt+Shift+F10: odaklanılan sohbeti 1'den 9'a ve 0 "
+"için hızlı erişime ata"
+
+#: translations/en-US/LC_MESSAGES/winzapp.po
+#: client/ui/dialogs/shortcuts_dialog.py
+msgctxt "shortcut_quick_chat_open_label"
+msgid "Ctrl+Shift+F1 to Ctrl+Shift+F10: open quick chat 1 to 9 and 0"
+msgstr "Ctrl+Shift+F1 - Ctrl+Shift+F10: 1'den 9'a ve 0 için hızlı sohbeti aç"
 
 #: translations/en-US/LC_MESSAGES/winzapp.po
 msgctxt "shortcut_remove"
