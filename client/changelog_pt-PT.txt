@@ -155,6 +155,24 @@ NOVIDADES
 
 - Neonize: o código QR de emparelhamento já não aparece cortado na janela de ligação. Passa a ser mostrado por inteiro, num tamanho que a câmara do telemóvel consegue ler.
 
+- Em Definições > Avançado há o novo botão "Exportar os registos desta conta...". Guarda em segundo plano um .zip com os registos da conta atual (e os da bridge Neonize) e anuncia o resultado.
+
+- Definições > Atalhos: um novo campo captura as teclas premidas e lista logo os comandos correspondentes em todas as categorias, anunciando quantos foram encontrados, com um botão para limpar a pesquisa. A árvore de atalhos já não anuncia seleções indevidas durante a escrita, é construída uma só vez ao abrir as Definições, a tecla Esc fecha a janela sem erros e, ao aplicar as alterações, o foco vai para o botão OK.
+
+- A transcrição automática de uma conversa passa a ser uma escolha única na janela de dados da conversa ou do grupo: Nenhuma, Online com IA ou Local com Whisper. A mesma mensagem nunca é transcrita duas vezes e as definições inconsistentes são recusadas.
+
+- O WinZapp inicia e abre as Definições mais depressa: só os contactos que realmente mudaram são regravados na base de dados, o registo de depuração de cada consulta à base de dados (centenas de MB) foi silenciado e as pastas incompletas do Chrome deixadas por transferências interrompidas são limpas.
+
+- O F5 já não duplica durante algum tempo as conversas na lista: a ligação entre o endereço @lid e o número de telefone é mantida durante o recarregamento da mesma conta.
+
+- As reações recebidas pelo endereço @lid chegam agora à conversa guardada sob o número de telefone (e vice-versa), aparecendo corretamente na pré-visualização, na lista e nas notificações em direto.
+
+- "Respostas ao aviso da comunidade" aparece agora apenas nos grupos de avisos de comunidade, e não nos grupos comuns.
+
+- WPPConnect: marcar uma mensagem como favorita e gostar de um estado voltam a funcionar.
+
+- Neonize: a sincronização do estado da aplicação já não causa conflitos que corrompiam o estado de leitura das conversas; marcar uma conversa como lida já não atrasa o envio de mensagens; as mensagens enviadas a uma conversa temporária levam o respetivo temporizador; as confirmações de leitura respeitam a opção de privacidade do WhatsApp (recibos silenciosos quando desativada); e o emparelhamento por número no Brasil tenta o número com e sem o 9.º dígito.
+
 V2.1.0.0
 
 Esta versão traz a transcrição de mensagens de voz no seu próprio computador, sem enviar nada para lado nenhum, e a transcrição e a descrição com IA online de mensagens de voz, imagens, vídeos, autocolantes e PDFs.

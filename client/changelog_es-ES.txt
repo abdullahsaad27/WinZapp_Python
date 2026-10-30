@@ -155,6 +155,24 @@ NOVEDADES
 
 - Neonize: el código QR de vinculación ya no aparece cortado en la ventana de conexión. Ahora se muestra completo, con un tamaño que la cámara del móvil puede leer.
 
+- En Configuración > Avanzado hay un nuevo botón "Exportar los registros de esta cuenta...". Guarda en segundo plano un .zip con los registros de la cuenta actual (y los del puente Neonize) y anuncia el resultado.
+
+- Configuración > Atajos: un nuevo campo captura las teclas pulsadas y lista al instante los comandos correspondientes en todas las categorías, anunciando cuántos se encontraron, con un botón para borrar la búsqueda. El árbol de atajos ya no anuncia selecciones indebidas mientras escribes, se construye una sola vez al abrir Configuración, la tecla Esc cierra la ventana sin errores y, al aplicar los cambios, el foco pasa al botón Aceptar.
+
+- La transcripción automática de una conversación es ahora una elección única en la ventana de datos de la conversación o del grupo: Ninguna, En línea con IA o Local con Whisper. Un mismo mensaje nunca se transcribe dos veces y se rechazan los ajustes incoherentes.
+
+- WinZapp arranca y abre Configuración más rápido: solo se regraban en la base de datos los contactos que realmente cambiaron, se silenció el registro de depuración de cada consulta de la base de datos (cientos de MB) y se limpian las carpetas incompletas de Chrome que dejan las descargas interrumpidas.
+
+- F5 ya no duplica durante un tiempo las conversaciones en la lista: el vínculo entre la dirección @lid y el número de teléfono se mantiene durante la recarga de la misma cuenta.
+
+- Las reacciones recibidas por la dirección @lid ahora llegan a la conversación guardada bajo el número de teléfono (y viceversa), y se muestran correctamente en la vista previa, en la lista y en las notificaciones en directo.
+
+- "Respuestas al aviso de la comunidad" ahora aparece solo en los grupos de avisos de comunidad, y no en los grupos normales.
+
+- WPPConnect: marcar un mensaje como favorito y dar me gusta a un estado vuelven a funcionar.
+
+- Neonize: la sincronización del estado de la aplicación ya no causa conflictos que corrompían el estado de lectura de las conversaciones; marcar una conversación como leída ya no retiene el envío de mensajes; los mensajes enviados a una conversación temporal llevan su temporizador; las confirmaciones de lectura respetan la opción de privacidad de WhatsApp (recibos silenciosos si está desactivada); y la vinculación por número en Brasil prueba el número con y sin el 9.º dígito.
+
 V2.1.0.0
 
 Esta versión trae la transcripción de mensajes de voz en tu propio ordenador, sin enviar nada a ningún sitio, y la transcripción y descripción con IA en línea de mensajes de voz, imágenes, vídeos, stickers y PDF.
