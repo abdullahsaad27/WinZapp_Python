@@ -26,22 +26,21 @@ class ReconfirmMixin:
 
     def _reconfirm_worker(self, *offered):
         import updater
-        newest = None
         try:
             newest = updater.newer_release_than_offered(
                 self._fetch_releases(), self._alpha_enabled(), __version__, offered[0])
+            if newest is not None:
+                assets = newest.get("assets", [])
+                offered = (
+                    (newest.get("tag_name") or "").lstrip("vV"), updater.find_zip_asset(assets),
+                    updater._find_sha256sums_asset(assets), updater._find_signature_asset(assets),
+                    updater.is_alpha_release(newest),
+                )
+                logging.info("Auto-updater: %s superseded the offered release — installing it instead.",
+                             offered[0])
         except Exception:
             # Cannot ask: the offered release is still a valid update.
             logging.exception("Auto-updater: could not re-confirm the latest release")
-        if newest is not None:
-            assets = newest.get("assets", [])
-            offered = (
-                (newest.get("tag_name") or "").lstrip("vV"), updater.find_zip_asset(assets),
-                updater._find_sha256sums_asset(assets), updater._find_signature_asset(assets),
-                updater.is_alpha_release(newest),
-            )
-            logging.info("Auto-updater: %s superseded the offered release — installing it instead.",
-                         offered[0])
         wx.CallAfter(self._install_reconfirmed, *offered)
 
     def _install_reconfirmed(self, *args):
