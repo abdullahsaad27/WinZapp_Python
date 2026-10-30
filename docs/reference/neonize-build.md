@@ -63,6 +63,13 @@ What the patches carry today:
   Answer when no `mute_v2` arrives; resynchronize the SRTP receive ROC.
   meowcaller is pinned at 27a3c6b1, its last commit on `go.mau.fi/whatsmeow`:
   later ones move to a whatsmeow fork (hypermeow).
+- **neonize 0013 / meowcaller 0005-0006**: bounded PCM reads without multi-frame
+  truncation, on-time microphone underruns, negotiated MLow/Opus codecs and
+  authenticated packet ordering, including late accepted codec settings.
+  See [call audio](neonize-call-audio.md) for
+  clocks, synthetic tests and quality limits. The bridge also filters the
+  48-to-16 kHz microphone conversion and owns each receive reader independently
+  of state-event order.
 
 ## Toolchain (once)
 
