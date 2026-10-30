@@ -6,6 +6,8 @@ NOVEDADES
 
 - Chats de acceso rápido: Ctrl+Alt+Shift+F1–F10 asigna un chat y Ctrl+Shift+la misma tecla de función lo abre desde cualquier lugar de la ventana (F10 es la posición 0). Las asignaciones son independientes para cada cuenta, los atajos se pueden cambiar en Configuración y los atajos de marcadores se conservan.
 
+- El árabe ya está disponible en Ajustes > General > Idioma, con textos en árabe en el instalador y desinstalador de Windows.
+
 - WPPConnect Server actualizado a la 2.10.70, que refuerza sus rutas de administración (listar y respaldar sesiones ahora exigen la clave secreta en una cabecera en lugar de la dirección), las carpetas de sesión que borra al cerrar sesión y la forma de separar listas de contactos. La limpieza de sesiones al cerrar con una API personalizada se adaptó a este cambio.
 
 - Una llamada grupal que sonó y no se atendió ahora queda registrada en su grupo, y el aviso de llamada muestra el grupo: ya no aparece como una llamada privada de quien la inició.
